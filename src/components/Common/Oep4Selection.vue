@@ -36,7 +36,6 @@
             @cancel="handleClose"
             :footer="null"
             :width="400">
-
                 <div>
                     <div class="selection-container">
                         <div v-for="item of oep4s" :key="item.contract_hash" class="selection-item">
@@ -45,10 +44,8 @@
                             <a-switch :checked="item.selected" @change='onChangeSelection(item)'/>
                         </div>
                     </div>
-
                     <a-pagination v-model="page_number" :total="total"  @change="handlePageChange" class="pages"/>
                 </div>
-
         </a-modal>
     </div>
 </template>

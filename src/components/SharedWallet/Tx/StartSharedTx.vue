@@ -3,10 +3,6 @@
     padding:20px 60px;
     text-align: left;
 }
-.tx-title {
-    font-size: 18px;
-    font-weight: 500;
-}
 .tx-content {
     margin:0 30px;
 }
@@ -15,17 +11,13 @@
     margin-bottom:15px;
 }
 .input-item input, textarea {
-    flex:1;
+    flex: 1;
 }
 .input-itme textarea {
     height:130px;
 }
-.label {
-    width:200px;
-    margin-right:10px;
-}
 .select-sponsor {
-    flex:1;
+    flex: 1;
 }
 .btns-container {
     margin: 30px auto;
@@ -34,25 +26,25 @@
 </style>
 <template>
     <div class="tx-container">
-        <p class="tx-title">{{$t('sharedTx.createTx')}}</p>
+        <p class="tx-title darkmode-ignore">{{$t('sharedTx.createTx')}}</p>
         <div class="tx-content">
              <div class="input-item">
-                 <p class="label">{{$t('sharedTx.contractHash')}}</p>
-                 <a-input v-model="contractHash"></a-input>
+                 <p class="label-left">{{$t('sharedTx.contractHash')}}</p>
+                 <a-input class="input" v-model="contractHash"></a-input>
             </div>
             <div class="input-item">
-                 <p class="label">{{$t('sharedTx.method')}}</p>
-                 <a-input v-model="method"></a-input>
+                 <p class="label-left">{{$t('sharedTx.method')}}</p>
+                 <a-input class="input" v-model="method"></a-input>
             </div>
             <div class="input-item">
-                 <p class="label">{{$t('sharedTx.parameters')}}</p>
-                 <a-textarea row="3" v-model="parameters"></a-textarea>
+                 <p class="label-left">{{$t('sharedTx.parameters')}}</p>
+                 <a-textarea class="textarea" row="3" v-model="parameters"></a-textarea>
             </div>
         </div>
         <p class="tx-title">{{$t('sharedTx.starterSign')}}</p>
         <div class="tx-content">
             <div class="input-item">
-                <span class="label">{{$t('sharedTx.selectSponsor')}}</span>
+                <span class="label-left">{{$t('sharedTx.selectSponsor')}}</span>
                 <a-select :options="localSigners" class="select-sponsor"  @change="handleChangeSponsor"></a-select>
             </div>
 

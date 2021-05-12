@@ -11,7 +11,6 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -57,12 +56,6 @@
 </script>
 
 <style scoped>
-  .shared-container {
-  }
-
-  .steps-content {
-  }
-
   .steps-action {
     margin-top: 24px;
   }

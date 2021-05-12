@@ -48,11 +48,11 @@
     right: 0;
     text-align: right;
     padding-right: 24px;
-    padding-bottom:10px;
-    width:100%;
-    font-weight:400;
+    padding-bottom: 10px;
+    width: 100%;
+    font-weight: 400;
     color: var(--black-or-white);
-    font-size:16px;
+    font-size: 16px;
     cursor: pointer;
 }
 .icon-bottom:hover, .icon-policy:hover > i {
@@ -64,8 +64,8 @@
     top: 10px;
     right:24px;
     cursor: pointer;
+    color: var(--black-or-white);
 }
-
 </style>
 
 <template>

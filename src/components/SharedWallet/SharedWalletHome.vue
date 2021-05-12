@@ -170,11 +170,7 @@
 .btn-swap {
   margin-left: 30px;
 }
-.btn-redeem {
-  float: left;
-  margin-left: 30px;
-  background: transparent;
-}
+
 .btn-dropdown {
   width: 120px;
   height: 34px;
@@ -190,27 +186,23 @@
   background: #272727;
   color: #c5c5c5;
 }
-.dropdown-item:hover {
-  color: #196bd8;
-}
 .left-btn-container {
   display: flex;
   justify-content: space-between;
 }
 .left-btn-more {
-    display:flex;
+    display: flex;
 }
 .vertical-line {
-    width:2px;
-    height:34px;
+    width: 2px;
+    height: 34px;
     background:#F4F4F6;
-    margin-right:29px;
+    margin-right: 29px;
 }
 .icon-arow {
     font-size: 10px;
     margin-left:4px;
 }
-
 </style>
 <template>
   <div class="home-container">
@@ -263,7 +255,7 @@
             </div>
             <div class="redeem-container">
               <a-button
-                type="default"
+                type="link"
                 class="btn-redeem"
                 @click="redeemOng"
               >{{$t('commonWalletHome.redeem')}}</a-button>

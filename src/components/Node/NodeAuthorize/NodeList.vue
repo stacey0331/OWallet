@@ -1,18 +1,26 @@
 <style scoped>
 .block-clock {
-    width:540px;
+    isolation: isolate;
+    width: 540px;
     height: 80px;
     margin:15px auto;
-    border:1px solid #dddddd;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    background: var(--primary-surface);
+    padding: 8px;
 }
 .countdown-img {
     float: left;
-    height:80px;
-    line-height: 80px;
+    height: 80px;
+    line-height: 60px;
 }
 .countdown-img img {
-    width:60px;
+    width: 60px;
     height: 60px;
+    user-select: none;
+}
+.darkmode--activated .countdown-img img {
+    filter: invert(180);
 }
 .countdown-text {
     padding-right: 60px;
@@ -21,7 +29,7 @@
 .countdown-text p {
     margin-bottom:10px;
     font-family: 'AvenirNext-Medium';
-    color: #5E6369;
+    color: var(--medium-text);
     font-size: 16px;
 }
 .label {
@@ -47,17 +55,15 @@
     float: right;
 }
 .question-icon {
-    position:absolute;
-    top:10px;
-    right:10px;
-    font-size:18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
     cursor: pointer;
-}
-.node-name {
-    /* color: #227EEC !important; */
+    color: var(--bright-text);
 }
 .node-name:hover {
-    color: #227EEC !important;
+    color: var(--primary-blue) !important;
 }
 </style>
 <template>
@@ -87,7 +93,7 @@
                 <p>{{$t('nodeMgmt.proportionNextRound')}}
                     <a-icon type="info-circle-o" class="proportion-info-icon" @click="showProportionTip"/>
                 </p>
-                </div>
+            </div>
             <span slot="nodeProportion" slot-scope="text, record">{{record.nodeProportion}} / {{record.userProportion}}</span>
             <a slot="name" slot-scope="text, record" class="node-name" :class="record.status ===2 ? 'node-consensus' : 'node-candidate' "
                 @click="handleNodeDetail(record)">
@@ -103,7 +109,6 @@
             <div slot="action" slot-scope="text, record" class="detail-link" v-if="record.maxAuthorize>0 && record.process !== '100.00%'">
                 <a-icon type="arrow-right" @click="handleAuthorizeLogin(record)" v-if="record.maxAuthorize>0"/>
             </div>
-
         </a-table>
     </div>
 </template>

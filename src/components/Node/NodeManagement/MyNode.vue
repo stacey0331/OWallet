@@ -166,7 +166,7 @@ export default {
 	}
 }
 .show-create-btn {
-	background-color: var(--primary-blue);
+	background-color: var(--primary-blue-light);
 }
 .node-item-create {
 	display: flex;

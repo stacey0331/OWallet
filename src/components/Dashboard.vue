@@ -250,7 +250,7 @@
               </div>
             </div>
             <div class="redeem-container">
-              <a-button type="default" class="btn-redeem"
+              <a-button type="link" class="btn-redeem"
               @click="redeemOng">{{$t('commonWalletHome.redeem')}}</a-button>
               <redeem-info-icon></redeem-info-icon>
             </div>

@@ -159,8 +159,8 @@
     width: calc(100% - 4rem);
     height: 85px;
     left: 4rem;
-    background: #FFFFFF;
-    box-shadow: 0 -1px 6px 0 #F2F2F2;
+    background: transparent !important;
+    box-shadow: 0 -1px 6px 0 var(--box-shadow) !important;
     z-index: 1000;
   }
 
@@ -175,10 +175,6 @@
   .basic-pk-btns :nth-child(3) {
     float: right;
     margin-right: 20px;
-  }
-
-  .error-input {
-    border-color: red;
   }
 </style>
 

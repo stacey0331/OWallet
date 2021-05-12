@@ -17,16 +17,13 @@
 			</div>
 
 			<div v-if="walletType === 'ledgerWallet'">
-
 				<div class="payer-ledger-status">
-					<div class="font-bold"
+					<div class="font-medium"
 						style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
-					<span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
-					<span class="font-medium">{{ledgerStatus}} </span>
+					<span class="font-medium-black darkmode-ignore">{{$t('ledgerWallet.status')}}: </span>
+					<span class="font-medium darkmode-ignore">{{ledgerStatus}}</span>
 				</div>
-
 			</div>
-
 		</a-radio-group>
 	</div>
 </template>
@@ -102,13 +99,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.label {
-    
-}
 .change-payer-radio {
     width: 100%;
 }
 .payer-radio-item {
     margin-bottom: 10px;
+	color: var(--bright-text);
 }
 </style>

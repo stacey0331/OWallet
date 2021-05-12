@@ -20,10 +20,6 @@
 .input-itme textarea {
     height:130px;
 }
-.label {
-    width:200px;
-    margin-right:10px;
-}
 .select-sponsor {
     flex:1;
 }
@@ -37,14 +33,14 @@
         <p class="tx-title">{{$t('sharedTx.addSign')}}</p>
         <div class="tx-content">
              <div class="input-item">
-                 <p class="label">{{$t('sharedTx.txContent')}}</p>
-                 <a-textarea v-model="txbody"></a-textarea>
+                 <p class="label-left">{{$t('sharedTx.txContent')}}</p>
+                 <a-textarea class="textarea" v-model="txbody"></a-textarea>
             </div>
         </div>
         <p class="tx-title">{{$t('sharedTx.currentSign')}}</p>
         <div class="tx-content">
             <div class="input-item">
-                <span class="label">{{$t('sharedTx.selectSigner')}}</span>
+                <span class="label-left">{{$t('sharedTx.selectSigner')}}</span>
                 <a-select :options="localSigners" class="select-sponsor"  @change="handleChangeSigner"></a-select>
             </div>
 

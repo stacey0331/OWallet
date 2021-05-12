@@ -7,7 +7,7 @@
         position: fixed;
         top:0;
         left:0;
-        background:transparent;
+        background: var(--primary-background);
         z-index: 100;
     }
     .back-icon-container {

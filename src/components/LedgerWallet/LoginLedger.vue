@@ -2,10 +2,10 @@
   <div id="wrapper">
     <main>
       <div class="left-side">
-        <router-link to="Wallets" class="backBtn darkmode-ignore">
+        <router-link to="Wallets" class="backBtn text-btn-hover darkmode-ignore">
           Back
         </router-link>
-        <div class="doc">
+        <div class="doc darkmode-ignore">
           <div class="title">Login with Ledger</div>
           <p class="font-medium" >{{$t('ledgerWallet.connectApp')}}</p>
             <p>
@@ -146,7 +146,7 @@
   }
 
   .title {
-    color: #2c3e50;
+    color: var(--bright-text);
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 15px;

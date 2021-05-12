@@ -33,9 +33,10 @@
     margin-left:30px;
 }
 .label {
+    isolation: isolate;
     font-family: 'PingFangSC-Semibold';
     font-size: 20px;
-    color: #5E6369;
+    color: var(--medium-text);
     margin-left: 172px;
 }
 .wallet-address {
@@ -76,23 +77,24 @@
 .circle {
     display: inline-block;
     text-align: center;
-    border-radius:50%;
-    width:1.5rem;
-    height:1.5rem;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
     line-height: 1.5rem;
     background:#FBE45A;
     font-family: 'AvenirNext-Medium';
-    font-size:14px;
+    font-size: 14px;
     color:#000000;
     vertical-align: middle;
     float: left;
+    user-select: none;
 }
 
 .copayer-name {
     margin-left: 20px;
     font-family: 'AvenirNext-Medium';
     font-size:14px;
-    color:#000000;
+    color: var(--black-or-white);
     float: left;
     display: block;
     width:150px;
@@ -101,9 +103,9 @@
 }
 .copayer-address {
     font-family: 'AvenirNext-Medium';
-    font-size:14px;
-    color:#5E6369;
-    float:right;
+    font-size: 14px;
+    color: var(--medium-text);
+    float: right;
 }
 </style>
 <template>
@@ -111,26 +113,26 @@
         <breadcrumb :current="$t('sharedWalletHome.copayers')" :routes="routes" v-on:backEvent="backToWallets"></breadcrumb>
         <div class="">
             <div class="wallet-info" v-if="sharedWallet">
-                <div class="label wallet-label">{{sharedWallet.sharedWalletName}}</div>
+                <div class="label">{{sharedWallet.sharedWalletName}}</div>
                 <div class="label wallet-address">
                     {{sharedWallet.sharedWalletAddress}}
                 </div>
                 
                 <div class="wallet-num">
                     <div class="wallet-num-item">
-                        <span class="font-medium">{{$t('importSharedWallet.totalCopayerNumber')}}</span>
-                        <span class="font-medium-black">{{sharedWallet.totalNumber}}</span>
+                        <span class="font-medium darkmode-ignore">{{$t('importSharedWallet.totalCopayerNumber')}}</span>
+                        <span class="font-medium-black darkmode-ignore">{{sharedWallet.totalNumber}}</span>
                     </div>
                     <div class="wallet-num-item">
-                        <span class="font-medium">{{$t('importSharedWallet.requiredCopayerNumber')}}</span>
-                        <span class="font-medium-black">{{sharedWallet.requiredNumber}}</span>
+                        <span class="font-medium darkmode-ignore">{{$t('importSharedWallet.requiredCopayerNumber')}}</span>
+                        <span class="font-medium-black darkmode-ignore">{{sharedWallet.requiredNumber}}</span>
                     </div>
                 </div>
                 <div class="confirm-pk-box">
                     <div class="confirm-pk-item clearfix" v-for="(pk,index) in sharedWallet.coPayers" :key="pk.publickey">
                         <span class="circle">{{index+1}}</span>
-                        <span class="copayer-name">{{pk.name}}</span>
-                        <span class="copayer-address">{{pk.address}}</span>
+                        <span class="copayer-name darkmode-ignore">{{pk.name}}</span>
+                        <span class="copayer-address darkmode-ignore">{{pk.address}}</span>
                     </div>
                 </div>
             </div>

@@ -135,8 +135,8 @@ export default {
 }
 .btn-container {
     text-align: center;
-    margin:5px auto;
-    padding-top:15px;
+    margin: 5px auto;
+    padding-top: 15px;
 }
 .btn-container p {
     margin-bottom:5px;

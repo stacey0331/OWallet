@@ -13,18 +13,19 @@
   }
 
   .import-json-nav-pills > li.nav-item > a {
-    color: black;
+    isolation: isolate;
+    color: var(--black-or-white);
   }
 
   .import-json-nav-pills .nav-link:hover {
-    color: #196BD8;
+    color: var(--primary-blue);
   }
 
   .import-json-nav-pills .nav-link.active {
-    color: #196BD8;
+    color: var(--primary-blue);
     background-color: transparent;
     border-radius: 0;
-    border-bottom: #196BD8 solid 1px;
+    border-bottom: var(--primary-blue) solid 1px;
   }
 
   .upload-dat-file {
@@ -119,7 +120,7 @@
     border-color: red;
   }
   .nav-item a {
-    font-size:14px !important;
+    font-size: 14px !important;
   }
 
   .tip {
@@ -217,7 +218,7 @@
            aria-labelledby="import-json-mnemonic-pills-tab">
         <a-input class="input" :placeholder="$t('importJsonWallet.label')" v-model="mnemonicLabel"></a-input>
 
-        <textarea class="import-json-mnemonic" id="import-json-mnemonic" rows="6"
+        <textarea class="import-json-mnemonic textarea" id="import-json-mnemonic" rows="6"
                   v-validate="{required: true} " :data-vv-as="$t('FormField.mnemonic')" name="mnemonic"
                   :placeholder="$t('importJsonWallet.mnemonic')" v-model="mnemonic"></textarea>
         <span class="v-validate-span-errors" v-show="errors.has('mnemonic')">{{ errors.first('mnemonic') }}</span>

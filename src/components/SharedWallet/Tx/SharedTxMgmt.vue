@@ -11,8 +11,8 @@
             <div class="pax-header">
 
                 <a-radio-group :value="status" @change="handleStatusChange" class="status-group">
-                    <a-radio-button value="0">{{$t('sharedTx.startTx')}}</a-radio-button>
-                    <a-radio-button value="1">{{$t('sharedTx.signTx')}}</a-radio-button>
+                    <a-radio-button class="switch-btn" value="0">{{$t('sharedTx.startTx')}}</a-radio-button>
+                    <a-radio-button class="switch-btn" value="1">{{$t('sharedTx.signTx')}}</a-radio-button>
                 </a-radio-group>
 
             </div>

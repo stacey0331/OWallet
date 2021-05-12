@@ -19,12 +19,12 @@
 					</div>
 					<form>
 						<div class="form-item">
-							<label for="stakeWallet">{{$t('nodeApply.stakeWallet')}}</label>
+							<label class="fields-label" for="stakeWallet">{{$t('nodeApply.stakeWallet')}}</label>
 							<select-wallet @walletSelected="onWalletSelected"></select-wallet>
 						</div>
 
 						<div class="form-item">
-							<label for="stakeWallet">{{$t('nodeApply.operationWallet')}}</label>
+							<label class="fields-label" for="stakeWallet">{{$t('nodeApply.operationWallet')}}</label>
 							<a-tabs default-active-key="1" type="card" >
 								<a-tab-pane key="1" :tab="$t('nodeApply.selectOperationWallet')">
 									<a-select :options="normalWallet"
@@ -36,20 +36,18 @@
 								</a-tab-pane>
 								<a-tab-pane key="2" :tab="$t('nodeApply.enterOperationPk')" >
 									<a-input v-model="operationPk"
+									class="input"
 									@blur="onSelectOperationWallet"
 									:placeholder="$t('nodeApply.enterOperationPk')"></a-input>
 								</a-tab-pane>
-
 							</a-tabs>
-
-
 						</div>
 
 						<div class="form-item">
-							<label for="">{{$t('nodeApply.stakeAmount')}}</label>
+							<label class="fields-label">{{$t('nodeApply.stakeAmount')}}</label>
 							<a-input v-model="stakeAmount"
 								type="number"
-								:class="validAmount ? '' : 'error-input' "
+								:class="{'error-input': !validAmount, 'input': true}"
 								@change="validateAmount"
 								:placeholder="$t('nodeApply.inputStakeAmount')"></a-input>
 						</div>
@@ -316,13 +314,14 @@ export default {
     }
 }
 .proxy-tip {
+	isolation: isolate;
 	text-align: left;
     font-size: 12px;
     font-family: AvenirNext-Regular,AvenirNext;
     font-weight: 400;
     margin-top: 4px;
 	span:first-child {
-		color: #000;
+		color: var(--black-or-white);
     opacity: 0.6;
 	}
 	span:last-child {

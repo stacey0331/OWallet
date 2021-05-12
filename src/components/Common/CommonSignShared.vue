@@ -2,23 +2,17 @@
 .sign-container {
     display: flex;
 }
-.label {
-    width:200px;
-     margin-right:10px;
-}
 .sign-content {
     flex:1;
-
 }
 
 </style>
 <template>
     <div class="sign-container">
-        <p class="label">{{$t('sharedTx.signTx')}}</p>
-
+        <p class="label-left">{{$t('sharedTx.signTx')}}</p>
         <div class="sign-content">
             <div v-if="wallet.type === 'CommonWallet'">
-                <a-input type="password" class="input-pass" :placeholder="$t('pax.inputPassword')" v-model="password"></a-input>
+                <a-input type="password" class="input-pass input" :placeholder="$t('pax.inputPassword')" v-model="password"></a-input>
             </div>
 
             <div class="ledger-status" v-if="wallet.type === 'HardwareWallet'">
