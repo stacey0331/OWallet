@@ -6,7 +6,7 @@
 .dapp-item {
     margin: 15px;
     cursor: pointer;
-    background: #f5f7fb;
+    background: var(--primary-surface);
     font-family: AvenirNext-Medium;
     font-size: 18px;
     color: #515457;
@@ -15,7 +15,7 @@
     border: 1px solid #f5f7fb;
 }
 .dapp-item:hover {
-    border:1px solid #196BD8;
+    border:1px solid var(--primary-blue);
 }
 
 .dapp-title {
@@ -24,6 +24,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    color: var(--bright-text);
 }
 .dapp-title > img {
     width: 30px;
@@ -36,6 +37,11 @@
     text-overflow: ellipsis;
     overflow: hidden;
     font-size: 14px;
+    color: var(--bright-text);
+}
+
+.darkmode--activated .img-to-invert {
+    filter: invert(100%);
 }
 </style>
 
@@ -85,7 +91,7 @@
                     @click="handleOntidMgmt"
                 >
                     <div class="dapp-title">
-                        <img :src="require('../assets/ontid.svg')" alt />
+                        <img class="img-to-invert" :src="require('../assets/ontid.svg')" alt />
                         <span>ONT ID</span>
                     </div>
                     <p class="dapp-content">{{$t('dapps.ontidMgmt')}}</p>

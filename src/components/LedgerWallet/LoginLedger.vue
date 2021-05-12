@@ -2,7 +2,7 @@
   <div id="wrapper">
     <main>
       <div class="left-side">
-        <router-link to="Wallets" class="backBtn">
+        <router-link to="Wallets" class="backBtn darkmode-ignore">
           Back
         </router-link>
         <div class="doc">
@@ -179,5 +179,6 @@
 
   .backBtn {
     font-size: 16px;
+    color: var(--primary-blue);
   }
 </style>

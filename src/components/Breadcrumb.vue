@@ -7,7 +7,7 @@
         position: fixed;
         top:0;
         left:0;
-        background:rgba(255,255,255,1);
+        background:transparent;
         z-index: 100;
     }
     .back-icon-container {
@@ -17,11 +17,11 @@
         border-right: 1px solid #dddddd;
         float: left;
         cursor: pointer;
-        color: #1C76DD;
+        color: var(--primary-blue);
         font-size: 18px;
     }
     .back-icon-container:hover {
-        color:#619AE5;
+        color: var(--primary-blue-light);
     }
     .back-icon {
         display: inline-block;
@@ -48,7 +48,7 @@
         height:1.7rem;
         line-height: 1.7rem;
         margin-left: 18px;
-        color: #000000;
+        color: var(--black-or-white);
         font-size:14px; 
         font-family: AvenirNext-Bold;
     }

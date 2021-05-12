@@ -87,7 +87,7 @@ import dbService from '../../../core/dbService'
     margin-top: 0.88rem;
     font-family: AvenirNext-Medium;
     font-size: 14px;
-    color: #196BD8;
+    color: var(--primary-blue);
     cursor: default;
   }
 
@@ -95,7 +95,7 @@ import dbService from '../../../core/dbService'
     margin-top: 1.75rem;
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: #515457;
+    color: var(--bright-text);
     line-height: 24px;
     word-wrap: break-word;
     height:6rem;

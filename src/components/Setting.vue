@@ -31,6 +31,15 @@
         </div>
 
         <div class="form-group form-group-top">
+          <label for="theme-selection">{{ $t('setting.theme') }}</label>
+          <select name="theme-selection" id="theme-selection" class="form-control" v-model="theme"
+                  @change="changeTheme">
+            <option value="day">{{ $t('setting.day') }}</option>
+            <option value="night">{{ $t('setting.night') }}</option>
+          </select>
+        </div>
+
+        <div class="form-group form-group-top">
           <label>{{ $t('setting.path') }}</label>
           <p>
             <span class="span-path-title">{{ $t('setting.pathTit') }}</span>{{savePath}}
@@ -60,7 +69,8 @@
         nodeAddress: localStorage.getItem('nodeAddress') || MAIN_NET_LIST[0],
         nodeList: localStorage.getItem('net') === 'TEST_NET' ? TEST_NET_LIST : MAIN_NET_LIST,
         lang: this.$i18n.locale,
-        savePath: localStorage.getItem('savePath')
+        savePath: localStorage.getItem('savePath'),
+        theme: null,
       }
     },
     methods: {
@@ -93,6 +103,9 @@
       changeLanguage() {
         this.$i18n.locale = this.lang
         LangStorage.setLang(this.$i18n.locale)
+      },
+      changeTheme() {
+
       },
       setSavePath() {
         dialog.showOpenDialog({properties: ['openDirectory','createDirectory']}).then(({filePaths}) => {

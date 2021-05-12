@@ -141,10 +141,11 @@ export default {
 		color: #515457;
 		margin-bottom: 15px;
 	}
-	background-color: #f5f7fb;
+	background-color: var(--primary-surface);
 	padding: 1.25rem;
 	position: relative;
 	width: 440px;
+	border: 1px solid white;
 
 	margin-right: 40px;
 	margin-bottom: 40px;
@@ -165,7 +166,7 @@ export default {
 	}
 }
 .show-create-btn {
-	background-color: #498fef;
+	background-color: var(--primary-blue);
 }
 .node-item-create {
 	display: flex;

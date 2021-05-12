@@ -24,10 +24,10 @@
     width: 10rem;
     height: 2.5rem;
     line-height: 1.8rem;
-    background-color: #196BD8;
+    background-color: var(--primary-blue);
     font-family: AvenirNext-Medium;
     font-size: 14px;
-    color: #FFFFFF;
+    color: var(--white-or-black);
     text-align: center;
     border-radius: 0;
     margin-top: 15vh;
@@ -36,11 +36,12 @@
   .div-footer-version {
     text-align: center;
     position: absolute;
-    bottom:10px;
+    bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right:0;
+    color: var(--bright-text);
   }
   .div-footer-version P {
     margin:0;
@@ -60,13 +61,14 @@
   .home-slogan :first-child {
     font-family: AvenirNext-Medium;
     font-size: 16px;
-    color: #000000;
+    color: var(--black-or-white);
     text-align: left;
     margin: 0;
   }
   .home-slogan :last-child {
     font-family: AvenirNext-Regular;
     margin: 0;
+    color: var(--bright-text);
   }
   .bg-container {
     position: relative;

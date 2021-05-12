@@ -2,17 +2,17 @@
   <div class="negative-margin-top">
     <ul class="nav nav-pills wallets-nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" @click="setActiveTab(1)">
-        <a class="nav-link" id="pills-common-tab" data-toggle="pill" href="#pills-common" role="tab"
+        <a class="nav-link darkmode-ignore" id="pills-common-tab" data-toggle="pill" href="#pills-common" role="tab"
           :class="activeTab == 1? 'active show' : ''"
            aria-controls="pills-common" aria-selected="false">{{ $t('wallets.common') }}</a>
       </li>
       <li class="nav-item" @click="setActiveTab(2)">
-        <a class="nav-link" id="pills-shared-tab" data-toggle="pill" href="#pills-shared" role="tab"
+        <a class="nav-link darkmode-ignore" id="pills-shared-tab" data-toggle="pill" href="#pills-shared" role="tab"
           :class="activeTab == 2? 'active show' : ''"
            aria-controls="pills-shared" aria-selected="false">{{ $t('wallets.shared') }}</a>
       </li>
       <li class="nav-item" @click="setActiveTab(3)">
-        <a class="nav-link" id="pills-ledger-tab" data-toggle="pill" href="#pills-ledger" role="tab"
+        <a class="nav-link darkmode-ignore" id="pills-ledger-tab" data-toggle="pill" href="#pills-ledger" role="tab"
           :class="activeTab == 3? 'active show' : ''"
            aria-controls="pills-ledger" aria-selected="false">{{ $t('wallets.ledger') }}</a>
       </li>
@@ -166,11 +166,11 @@
   }
 
   .nav-item > a:hover {
-    color: #196BD8;
+    color: var(--primary-blue);
   }
 
   .wallets-nav-pills .nav-link.active {
-    color: #196BD8;
+    color: var(--primary-blue);
     background-color: transparent;
     border-radius: 0;
   }
@@ -210,7 +210,7 @@
   }
 
   .normalWallet {
-    background-color: #F5F7FB;
+    background-color: var(--primary-surface);
     padding: 0 1.25rem;
     position: relative;
   }
@@ -220,13 +220,13 @@
   }
 
   .div-create-wallet {
-    background-color: #F5F7FB;
+    background-color: var(--primary-surface);
     font-family: AvenirNext-Medium;
     position: relative;
   }
 
   .div-create-wallet-bg-color {
-    background-color: #498FEF;
+    background-color: var(--primary-blue-light);
   }
 
   .img-wallet-create {
@@ -247,6 +247,10 @@
     color: white;
     border: white solid 1px;
     border-radius: 0;
+  }
+
+  .darkmode--activated .btn-create {
+    mix-blend-mode: difference;
   }
 
   .div-create {
@@ -322,7 +326,7 @@
     top: -5px;
     left: -5rem;
     cursor: pointer;
-    color: #196BD8;
+    color: var(--primary-blue);
   }
   .ledger-help-link :hover {
     text-decoration: underline;

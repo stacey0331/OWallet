@@ -99,19 +99,19 @@
   .check-more {
     font-family: AvenirNext-Medium;
     font-size: 12px;
-    color: #227EEC;
+    color: var(--primary-blue);
     text-align: center;
     cursor: pointer;
-    width:100%;
-    float:left;
+    width: 100%;
+    float: left;
   }
   .check-more:hover {
-    color:#619AE5;
+    color: var(--primary-blue-light);
   }
 
   .txList-header {
     padding-bottom: 5px;
-    border-bottom: 1px solid #F4F4F6;
+    border-bottom: var(--white-bottom-border);
     position: relative;
     margin-bottom:10px;
   }
@@ -119,7 +119,7 @@
   .txList-header :first-child {
     font-family: AvenirNext-Bold;
     font-size: 14px;
-    color: #000000;
+    color: var(--black-or-white);
     text-align: center;
   }
 
@@ -240,11 +240,11 @@
         <div class="left-footer">
           <div class="claim-ong-container">
             <div class="claim-ong">
-              <div class="claim-ong-item ">
+              <div class="claim-ong-item">
                 <span>{{$t('commonWalletHome.claimableOng')}}: </span>
                 <span>{{balance.unboundOng}}</span>
               </div>
-              <div class="claim-ong-item ">
+              <div class="claim-ong-item">
                 <span>{{$t('commonWalletHome.unboundOng')}}: </span>
                 <span>{{balance.waitBoundOng}}</span>
               </div>

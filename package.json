@@ -25,6 +25,7 @@
     "bootstrap": "^4.1.1",
     "clipboard": "^2.0.1",
     "core-js": "^3.6.5",
+    "darkmode-js": "^1.5.7",
     "dateformat": "^3.0.3",
     "delay": "^4.4.0",
     "elliptic": "^6.4.1",

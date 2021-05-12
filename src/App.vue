@@ -15,6 +15,21 @@
   import 'bootstrap/dist/js/bootstrap.min.js'
   import TopLeftNav from "./components/TopLeftNav"
   import LoadingModal from './components/Modals/Loading'
+  import Darkmode from 'darkmode-js';
+
+  const options = {
+    bottom: '64px', // default: '32px'
+    right: '32px', // default: '32px'
+    time: '0.5s', // default: '0.3s'
+    mixColor: '#fff', // default: '#fff'
+    backgroundColor: '#fff',  // default: '#fff'
+    saveInCookies: true, // default: true,
+    label: '🌓', // default: ''
+    autoMatchOsTheme: true // default: true
+  }
+
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();
 
   export default {
     name: 'ont-wallet-test',
@@ -39,6 +54,29 @@
 
 <style lang="scss">
   /* CSS */
+  :root {
+    --black-or-white: black;
+    --white-or-black: white;
+    --primary-blue: #196BD8;
+    --primary-blue-light: #619AE5;
+    --primary-dark: black; // the background color
+    --primary-surface: #F5F7FB;
+    --primary-surface-warm: #F4F4F6;
+    --bright-text: #43474b;
+    --white-bottom-border: 1px solid #F4F4F6;
+    
+  }
+  .darkmode--activated {
+    --black-or-white: rgb(219, 219, 219);
+    --white-or-black: black;
+    --primary-blue: #3EE3FF;
+    --primary-blue-light: #B2F4FF;
+    --primary-surface: #1E1E1E;
+    --primary-surface-warm: #2c2a2a;
+    --bright-text: #cecece;
+    --white-bottom-border: 1px solid rgba(136, 136, 136, 0.534);
+  }
+
   @font-face {
     font-family: SourceSansPro;
     src: url('./assets/fonts/SourceSansPro-Semibold.ttf');
@@ -79,7 +117,7 @@
 
   .font-regular {
     font-family: AvenirNext-Regular;
-    color: #000000;
+    color: var(--black-or-white);
     font-size: 0.88rem;
   }
 
@@ -233,6 +271,10 @@
     background-color:#F4F4F6;
     cursor: pointer;
   }
+  .darkmode--activated .common-icon {
+    filter: brightness(2);
+    background-color: #181818;
+  }
   .common-icon:hover {
     background-color:#E4E6EA;
   }
@@ -268,14 +310,14 @@
 
  .wallet-balance {
     font-size: 16px;
-    color: #000000;
+    color: var(--black-or-white);
     font-family: 'AvenirNext-Bold';
     position: relative;
     margin-top: 30px;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     padding-bottom: 5px;
-    border-bottom:1px solid #F4F4F6;
+    border-bottom: var(--white-bottom-border);
   }
 
   .wallet-balance :first-child {
@@ -292,7 +334,7 @@
     /* padding-right:20px; */
     width:100%;
     height:40px;
-    border-bottom:1px solid #F4F4F6;
+    border-bottom: var(--white-bottom-border);
   }
 
   .asset-ong {
@@ -304,7 +346,7 @@
   .asset-label {
     font-family: AvenirNext-Medium;
     font-size: 0.88rem;
-    color: #515457;
+    color: var(--bright-text);
     float: left;
     margin-right: 12px;
   }
@@ -312,7 +354,7 @@
   .asset-amount {
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: #000000;
+    color: var(--bright-text);
   }
 
   .asset-value {
@@ -325,18 +367,21 @@
 
   .asset-btn {
     border-radius: 0;
-    background: #196BD8;
+    background: var(--primary-blue);
     font-family: AvenirNext-Medium;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #fff;
     margin-right: 20px;
     margin-bottom: 20px;
     border: none;
-    width:120px;
+    width: 120px;
     height: 34px;
   }
+  .darkmode--activated .asset-btn {
+    color: var(--primary-dark);
+  }
   .asset-btn > i {
-      margin-right:4px;
+      margin-right: 4px;
   }
 
   .claim-ong-container {
@@ -344,7 +389,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom:10px;
-    border-bottom: 1px solid #F4F4F6;
+    border-bottom: var(--white-bottom-border);
     margin-bottom:20px;
   }
 
@@ -356,7 +401,7 @@
   .claim-ong-item :first-child {
     font-family: AvenirNext-Medium;
     font-size: 12px;
-    color: #515457;
+    color: var(--bright-text);
     margin-right: 8px;
     width: 100px;
     display: block;
@@ -366,7 +411,7 @@
   .claim-ong-item :nth-child(2) {
     font-family: AvenirNext-Medium;
     font-size: 12px;
-    color: #000000;
+    color: var(--black-or-white);
     float: left;
   }
   .redeem-container {
@@ -376,15 +421,18 @@
 
   .btn-redeem {
     border: none;
-    color: #227EEC;
+    color: var(--primary-blue);
     font-size: 14px;
     font-family: AvenirNext-Medium;
     font-weight: 500;
     padding-right: 0;
+    background: transparent;
   }
   .btn-redeem:hover {
-    color:#619AE5;
+    color: var(--primary-blue-light);
+    background: transparent;
   }
+
 
   .tx-item {
     display: flex;

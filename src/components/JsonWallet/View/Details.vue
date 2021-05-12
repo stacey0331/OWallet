@@ -16,19 +16,19 @@
     <img class="img-wallet-copy" src="../../../assets/copy.png" @click="copyAddress(wallet)" alt="">
     <div class="common-topRight-btns">
       <span class="common-delete-icon" @click="deleteWallet()" v-if="!isCommonWallet"></span>
-      <a-dropdown v-if="isCommonWallet">
+      <a-dropdown class="more-dropdown" v-if="isCommonWallet">
         <a-menu slot="overlay" >
           <a-menu-item key="1" @click="handleExportWallet()">
-            <span >{{$t('common.exportDat')}}</span>
+            <span>{{$t('common.exportDat')}}</span>
           </a-menu-item>
           <a-menu-item key="2" @click="handleExportWIF()">
-            <span  >{{$t('common.exportWIF')}}</span>
+            <span>{{$t('common.exportWIF')}}</span>
           </a-menu-item>
           <a-menu-item key="3" @click="handleChangePassword()">
-            <span  >{{$t('common.changePassword')}}</span>
+            <span>{{$t('common.changePassword')}}</span>
           </a-menu-item>
           <a-menu-item key="4" @click="deleteWallet()">
-            <span  >{{$t('common.deleteWallet')}}</span>
+            <span>{{$t('common.deleteWallet')}}</span>
           </a-menu-item>
         </a-menu>
         <a-button style="margin-left: 8px">
@@ -292,7 +292,7 @@
     margin-top: 0.88rem;
     font-family: AvenirNext-Medium;
     font-size: 14px;
-    color: #196BD8;
+    color: var(--primary-blue);
     cursor: default;
   }
 
@@ -300,7 +300,7 @@
     margin-top: 1.75rem;
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: #515457;
+    color: var(--bright-text);
     line-height: 24px;
     word-wrap: break-word;
     height:6rem;
@@ -317,8 +317,8 @@
     font-family: AvenirNext-Regular;
     font-size: 14px;
     color: #B2B2B3;
-    position:absolute;
-    bottom:10px;
+    position: absolute;
+    bottom: 10px;
     cursor: default;
   }
 
@@ -390,5 +390,10 @@
   .change-pass-success button {
     display: block;
     margin:0 auto;
+  }
+
+  .more-dropdown {
+    background-color: transparent;
+    color: var(--bright-text);
   }
 </style>

@@ -96,14 +96,14 @@
 }
 .txList-header {
   padding-bottom: 5px;
-  border-bottom: 1px solid #dfe2e9;
+  border-bottom: var(--white-bottom-border);
   position: relative;
   margin-bottom: 10px;
 }
 .txList-header :first-child {
   font-family: AvenirNext-Bold;
   font-size: 14px;
-  color: #000000;
+  color: var(--black-or-white);
   text-align: center;
 }
 
@@ -173,6 +173,7 @@
 .btn-redeem {
   float: left;
   margin-left: 30px;
+  background: transparent;
 }
 .btn-dropdown {
   width: 120px;
@@ -181,9 +182,13 @@
   font-size: 14px;
   font-family: AvenirNext-Medium;
   font-weight: 500;
-  color: rgba(25, 107, 216, 1);
+  color: #196BD8;
   border-radius: 0;
   border: none;
+}
+.darkmode--activated .btn-dropdown {
+  background: #272727;
+  color: #c5c5c5;
 }
 .dropdown-item:hover {
   color: #196bd8;
@@ -221,20 +226,20 @@
         <div class="wallet-balance">
           <div>
             <span>{{$t('sharedWalletHome.balance')}}</span>
-            <span class="common-icon  refresh-icon" @click="refresh(true)"></span>
+            <span class="common-icon refresh-icon" @click="refresh(true)"></span>
           </div>
           <span class="common-icon add-icon" @click="addOep4"></span>
         </div>
         <div class="asset-container">
           <div class="asset-item">
-            <span class="asset-label">ONT</span>
-            <span class="asset-amount">{{balance.ont}}</span>
+            <span class="asset-label darkmode-ignore">ONT</span>
+            <span class="asset-amount darkmode-ignore">{{balance.ont}}</span>
           </div>
           <!-- <div class="asset-value">${{balance.ontValue}}</div> -->
 
           <div class="asset-item">
-            <span class="asset-label">ONG</span>
-            <span class="asset-amount">{{balance.ong}}</span>
+            <span class="asset-label darkmode-ignore">ONG</span>
+            <span class="asset-amount darkmode-ignore">{{balance.ong}}</span>
           </div>
           <!-- <div class="asset-value">{{'$900'}}</div> -->
 
@@ -295,7 +300,7 @@
                 <a-button class="btn-dropdown">
                   {{$t('common.more')}}
                   <!-- <a-icon type="down" /> -->
-                  <i class="fa fa-chevron-down icon-arrow"></i>
+                  <i class="fa fa-chevron-down icon-arrow ml-1"></i>
                 </a-button>
               </a-dropdown>
             </div>

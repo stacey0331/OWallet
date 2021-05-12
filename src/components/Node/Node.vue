@@ -11,7 +11,7 @@
 .btn-item {
     width:280px;
     height:160px;
-    background: #F4F4F6;
+    background: var(--primary-surface-warm);
     text-align: left;
     margin-bottom:32px;
     margin-right: 32px;
@@ -21,13 +21,14 @@
 
 .btn-item p:first-child {
     margin-bottom: 12px;
+    color: var(--bright-text);
 }
 .btn-item p:nth-child(2) {
     font-size:14px;
     font-family:AvenirNext-Regular,AvenirNext;
     font-weight:400;
-    color:rgba(0,0,0,1);
-    opacity: 0.4;
+    color: var(--bright-text);
+    opacity: 0.5;
 }
 .btn-item button {
     font-size:18px !important;
@@ -38,7 +39,7 @@
     font-size:18px;
     font-family:AvenirNext-Medium,AvenirNext;
     font-weight:500;
-    color:rgba(0,0,0,1);
+    color: var(--black-or-white);
     margin-bottom:24px;
 }
 .icon-bottom {
@@ -50,12 +51,12 @@
     padding-bottom:10px;
     width:100%;
     font-weight:400;
-    color:rgba(0,0,0,1);
+    color: var(--black-or-white);
     font-size:16px;
     cursor: pointer;
 }
 .icon-bottom:hover, .icon-policy:hover > i {
-    color: #196BD8;
+    color: var(--primary-blue);
 }
 
 .icon-policy {
