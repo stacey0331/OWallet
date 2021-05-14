@@ -36,9 +36,6 @@
   text-align: center;
 }
 
-.owners-table {
-}
-
 .table-item {
   margin: 10px 0;
 }
@@ -66,7 +63,7 @@
   position: absolute;
   width: 3rem;
   height: 3rem;
-  background: url("../../assets/sharedWallet.png") center center;
+  background: url('../../assets/sharedWallet.png') center center;
   background-size: cover;
   right: 0;
   top: -12px;
@@ -129,7 +126,6 @@
   background: rgba(0, 0, 0, 0.1);
 }
 
-
 .commonWallet-btn {
   width: 70px;
   height: 28px;
@@ -163,7 +159,7 @@
   font-size: 14px;
   font-family: AvenirNext-Medium;
   font-weight: 500;
-  color: #196BD8;
+  color: #196bd8;
   border-radius: 0;
   border: none;
 }
@@ -176,28 +172,34 @@
   justify-content: space-between;
 }
 .left-btn-more {
-    display: flex;
+  display: flex;
 }
 .vertical-line {
-    width: 2px;
-    height: 34px;
-    background:#F4F4F6;
-    margin-right: 29px;
+  width: 2px;
+  height: 34px;
+  background: #f4f4f6;
+  margin-right: 29px;
 }
 .darkmode--activated .vertical-line {
-  background: #2A2A2A;
+  background: #2a2a2a;
 }
 .icon-arow {
-    font-size: 10px;
-    margin-left:4px;
+  font-size: 10px;
+  margin-left: 4px;
 }
 </style>
 <template>
   <div class="home-container">
-    <breadcrumb :current="sharedWallet.sharedWalletName" v-on:backEvent="handleBack"></breadcrumb>
+    <breadcrumb
+      :current="sharedWallet.sharedWalletName"
+      v-on:backEvent="handleBack"
+    ></breadcrumb>
     <div class="wallet-info">
       <p class="font-regular">
-        {{$t('sharedWalletHome.walletAddress')}}: <span class="font-gray">{{this.sharedWallet.sharedWalletAddress}}</span>
+        {{ $t('sharedWalletHome.walletAddress') }}:
+        <span class="font-gray">{{
+          this.sharedWallet.sharedWalletAddress
+        }}</span>
         <span class="common-icon copy-icon" @click="copy()"></span>
       </p>
     </div>
@@ -205,27 +207,34 @@
       <div class="left-half">
         <div class="wallet-balance">
           <div>
-            <span>{{$t('sharedWalletHome.balance')}}</span>
-            <span class="common-icon refresh-icon" @click="refresh(true)"></span>
+            <span>{{ $t('sharedWalletHome.balance') }}</span>
+            <span
+              class="common-icon refresh-icon"
+              @click="refresh(true)"
+            ></span>
           </div>
           <span class="common-icon add-icon" @click="addOep4"></span>
         </div>
         <div class="asset-container">
           <div class="asset-item">
             <span class="asset-label darkmode-ignore">ONT</span>
-            <span class="asset-amount darkmode-ignore">{{balance.ont}}</span>
+            <span class="asset-amount darkmode-ignore">{{ balance.ont }}</span>
           </div>
           <!-- <div class="asset-value">${{balance.ontValue}}</div> -->
 
           <div class="asset-item">
             <span class="asset-label darkmode-ignore">ONG</span>
-            <span class="asset-amount darkmode-ignore">{{balance.ong}}</span>
+            <span class="asset-amount darkmode-ignore">{{ balance.ong }}</span>
           </div>
           <!-- <div class="asset-value">{{'$900'}}</div> -->
 
-          <div class="asset-item" v-for="item of oep4s" :key="item.contract_hash">
-            <span class="asset-label">{{item.symbol}}</span>
-            <span class="asset-amount">{{item.balance}}</span>
+          <div
+            class="asset-item"
+            v-for="item of oep4s"
+            :key="item.contract_hash"
+          >
+            <span class="asset-label">{{ item.symbol }}</span>
+            <span class="asset-amount">{{ item.balance }}</span>
           </div>
         </div>
 
@@ -233,33 +242,35 @@
           <div class="claim-ong-container">
             <div class="claim-ong">
               <div class="claim-ong-item">
-                <span>{{$t('commonWalletHome.claimableOng')}}:</span>
-                <span>{{balance.unboundOng}}</span>
+                <span>{{ $t('commonWalletHome.claimableOng') }}:</span>
+                <span>{{ balance.unboundOng }}</span>
               </div>
               <div class="claim-ong-item">
-                <span>{{$t('commonWalletHome.unboundOng')}}:</span>
-                <span>{{balance.waitBoundOng}}</span>
+                <span>{{ $t('commonWalletHome.unboundOng') }}:</span>
+                <span>{{ balance.waitBoundOng }}</span>
               </div>
             </div>
             <div class="redeem-container">
-              <a-button
-                type="link"
-                class="btn-redeem"
-                @click="redeemOng"
-              >{{$t('commonWalletHome.redeem')}}</a-button>
+              <a-button type="link" class="btn-redeem" @click="redeemOng">{{
+                $t('commonWalletHome.redeem')
+              }}</a-button>
               <redeem-info-icon></redeem-info-icon>
             </div>
           </div>
 
           <div v-if="hasLocalCopayer" class="left-btn-container">
             <div>
-              <a-button class="asset-btn" type="primary" @click="showTransferBox">
+              <a-button
+                class="asset-btn"
+                type="primary"
+                @click="showTransferBox"
+              >
                 <i class="fa fa-paper-plane"></i>
-                {{$t('sharedWalletHome.send')}}
+                {{ $t('sharedWalletHome.send') }}
               </a-button>
               <a-button class="asset-btn" type="primary" @click="showReceive">
                 <i class="fa fa-qrcode"></i>
-                {{$t('sharedWalletHome.receive')}}
+                {{ $t('sharedWalletHome.receive') }}
               </a-button>
             </div>
 
@@ -268,17 +279,19 @@
               <a-dropdown placement="topCenter">
                 <a-menu slot="overlay">
                   <a-menu-item key="1" v-if="showPax">
-                    <span @click="showPaxMgmt()">{{$t('sharedWalletHome.paxMgmt')}}</span>
+                    <span @click="showPaxMgmt()">{{
+                      $t('sharedWalletHome.paxMgmt')
+                    }}</span>
                   </a-menu-item>
                   <a-menu-item key="2" @click="showTxMgmt()">
-                    <span>{{$t('sharedWalletHome.txMgmt')}}</span>
+                    <span>{{ $t('sharedWalletHome.txMgmt') }}</span>
                   </a-menu-item>
                   <a-menu-item key="3" @click="toCopayerDetail()">
-                    <span>{{$t('sharedWalletHome.copayers')}}</span>
+                    <span>{{ $t('sharedWalletHome.copayers') }}</span>
                   </a-menu-item>
                 </a-menu>
                 <a-button class="btn-dropdown">
-                  {{$t('common.more')}}
+                  {{ $t('common.more') }}
                   <!-- <a-icon type="down" /> -->
                   <i class="fa fa-chevron-down icon-arrow ml-1"></i>
                 </a-button>
@@ -291,7 +304,7 @@
       <div class="right-half">
         <div class="pending-tx">
           <div class="txList-header">
-            <span>{{$t('sharedWalletHome.pendingTx')}}</span>
+            <span>{{ $t('sharedWalletHome.pendingTx') }}</span>
             <!-- <span class="transfer-icon"></span> -->
           </div>
           <div class="pending-tx-container">
@@ -301,87 +314,99 @@
               class="tx-item pendingTx-item"
               @click="pendingTxDetail(tx)"
             >
-              <span>{{tx.transactionidhash}}</span>
+              <span>{{ tx.transactionidhash }}</span>
               <span>
-                {{tx.receiveaddress === sharedWallet.sharedWalletAddress ? '+' : '-'}}
-                {{tx.amount}} {{tx.assetName}}
+                {{
+                  tx.receiveaddress === sharedWallet.sharedWalletAddress
+                    ? '+'
+                    : '-'
+                }}
+                {{ tx.amount }} {{ tx.assetName }}
               </span>
             </div>
           </div>
         </div>
         <div class="completed-tx">
           <div class="txList-header">
-            <span>{{$t('sharedWalletHome.completedTx')}}</span>
+            <span>{{ $t('sharedWalletHome.completedTx') }}</span>
             <span class="transfer-icon"></span>
           </div>
 
           <div
-            v-for="(tx) in completedTx"
+            v-for="tx in completedTx"
             :key="tx.txHash"
             class="tx-item"
             @click="showTxDetail(tx.txHash)"
           >
-            <span>{{tx.txHash.substring(0,40)+'...'}}</span>
-            <span>{{tx.amount}} {{tx.asset}}</span>
+            <span>{{ tx.txHash.substring(0, 40) + '...' }}</span>
+            <span>{{ tx.amount }} {{ tx.asset }}</span>
           </div>
           <div
             class="check-more"
             v-if="completedTx.length > 5"
             @click="checkMoreTx"
-          >{{$t('sharedWalletHome.checkMore')}}
+          >
+            {{ $t('sharedWalletHome.checkMore') }}
             <i class="fa fa-chevron-right icon-arrow"></i>
           </div>
         </div>
       </div>
     </div>
-    <a-modal :title="$t('redeemInfo.info')" v-model="redeemInfoVisible" @ok="handleModalOk">
+    <a-modal
+      :title="$t('redeemInfo.info')"
+      v-model="redeemInfoVisible"
+      @ok="handleModalOk"
+    >
       <p class="font-regular">
         <span class="font-medium"></span>
-        {{$t('redeemInfo.noClaimableOng')}}
+        {{ $t('redeemInfo.noClaimableOng') }}
       </p>
     </a-modal>
 
-    <oep4-selection :visible="showOep4Selection" @closeOep4Selection="closeOep4Selection"></oep4-selection>
+    <oep4-selection
+      :visible="showOep4Selection"
+      @closeOep4Selection="closeOep4Selection"
+    ></oep4-selection>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 import {
   TEST_NET,
   MAIN_NET,
   ONT_PASS_NODE,
   ONT_PASS_NODE_PRD,
   ONT_PASS_URL,
-  PAX_SC_HASH
-} from "../../core/consts";
-import dbService from "../../core/dbService";
-import axios from "axios";
-import Breadcrumb from "../Breadcrumb";
-import { BigNumber } from "bignumber.js";
-import RedeemInfoIcon from "../RedeemInfoIcon";
-import Oep4Selection from "./../Common/Oep4Selection";
+  PAX_SC_HASH,
+} from '../../core/consts';
+import dbService from '../../core/dbService';
+import axios from 'axios';
+import Breadcrumb from '../Breadcrumb';
+import { BigNumber } from 'bignumber.js';
+import RedeemInfoIcon from '../RedeemInfoIcon';
+import Oep4Selection from './../Common/Oep4Selection';
 import {
   open,
   getRestClient,
   getTransactionListUrl,
-  getBalanceUrl
-} from "../../core/utils";
-import { TransactionBuilder, Crypto, utils } from "ontology-ts-sdk";
-const ONG_GOVERNANCE_CONTRACT = "AFmseVrdL9f9oyCzZefL9tG6UbviEH9ugK";
+  getBalanceUrl,
+} from '../../core/utils';
+import { TransactionBuilder, Crypto, utils } from 'ontology-ts-sdk';
+const ONG_GOVERNANCE_CONTRACT = 'AFmseVrdL9f9oyCzZefL9tG6UbviEH9ugK';
 export default {
-  name: "SharedWalletHome",
+  name: 'SharedWalletHome',
   data() {
-    const net = localStorage.getItem("net");
+    const net = localStorage.getItem('net');
     const network =
-      net && net === "TEST_NET"
-        ? this.$t("common.testNet")
-        : this.$t("common.mainNet");
-    const sharedWallet = JSON.parse(sessionStorage.getItem("sharedWallet"));
+      net && net === 'TEST_NET'
+        ? this.$t('common.testNet')
+        : this.$t('common.mainNet');
+    const sharedWallet = JSON.parse(sessionStorage.getItem('sharedWallet'));
     return {
       amount: 0,
-      toAddress: "",
-      transactions: "",
+      toAddress: '',
+      transactions: '',
       sharedWallet,
       pendingTx: [],
       completedTx: [],
@@ -390,29 +415,29 @@ export default {
       network,
       hasLocalCopayer: true,
       interval: 15000,
-      intervalId: "",
+      intervalId: '',
       redeemInfoVisible: false,
       requestStart: false,
       showPax: false,
-      showOep4Selection: false
+      showOep4Selection: false,
     };
   },
   components: {
     Breadcrumb,
     RedeemInfoIcon,
-    Oep4Selection
+    Oep4Selection,
   },
   created() {
-    const net = localStorage.getItem("net");
-    const scriptHash = net === "TEST_NET" ? PAX_SC_HASH.TEST : PAX_SC_HASH.MAIN;
+    const net = localStorage.getItem('net');
+    const scriptHash = net === 'TEST_NET' ? PAX_SC_HASH.TEST : PAX_SC_HASH.MAIN;
     const contractAddr = new Crypto.Address(utils.reverseHex(scriptHash));
-    const method = "getManualSupplyController";
+    const method = 'getManualSupplyController';
     const tx = TransactionBuilder.makeInvokeTransaction(
       method,
       [],
       contractAddr,
-      "2500",
-      "20000"
+      '2500',
+      '20000'
     );
     const restClient = getRestClient();
     restClient.sendRawTransaction(tx.serialize(), true).then(res => {
@@ -429,9 +454,9 @@ export default {
     // UPDATE CURRENT WALLET
     const wallet = {
       address: this.sharedWallet.sharedWalletAddress,
-      name: this.sharedWallet.sharedWalletName
+      name: this.sharedWallet.sharedWalletName,
     };
-    this.$store.commit("UPDATE_CURRENT_WALLET", { wallet });
+    this.$store.commit('UPDATE_CURRENT_WALLET', { wallet });
 
     this.refresh(true);
     this.ifHasLocalCopayer();
@@ -446,12 +471,12 @@ export default {
   computed: {
     ...mapState({
       balance: state => state.CurrentWallet.balance,
-      oep4s: state => state.Tokens.oep4WithBalances
-    })
+      oep4s: state => state.Tokens.oep4WithBalances,
+    }),
   },
   methods: {
     handleBack() {
-      this.$router.push({ name: "Wallets" });
+      this.$router.push({ name: 'Wallets' });
     },
     async getTransactions() {
       const url = getTransactionListUrl(this.sharedWallet.sharedWalletAddress);
@@ -462,22 +487,19 @@ export default {
         for (const t of txlist) {
           for (const tx of t.transfers) {
             const asset = tx.asset_name.toUpperCase();
-            if (
-              tx.to_address === ONG_GOVERNANCE_CONTRACT &&
-              asset === "ONG"
-            ) {
+            if (tx.to_address === ONG_GOVERNANCE_CONTRACT && asset === 'ONG') {
               continue;
             }
-            let amount = asset === "ONT" ? parseInt(tx.amount) : tx.amount;
+            let amount = asset === 'ONT' ? parseInt(tx.amount) : tx.amount;
             if (tx.from_address === this.sharedWallet.sharedWalletAddress) {
-              amount = "-" + amount;
+              amount = '-' + amount;
             } else {
-              amount = "+" + amount;
+              amount = '+' + amount;
             }
             completed.push({
               txHash: t.tx_hash,
               asset,
-              amount: amount
+              amount: amount,
             });
           }
         }
@@ -485,37 +507,37 @@ export default {
         return completed; // fetch tx history succeed
       } catch (err) {
         console.log(err);
-        this.$message.error(this.$t("dashboard.getTransErr"));
+        this.$message.error(this.$t('dashboard.getTransErr'));
         return false; // fetch tx history failed
       }
     },
     getBalance() {
       return this.$store
-        .dispatch("getNativeBalance", {
-          address: this.sharedWallet.sharedWalletAddress
+        .dispatch('getNativeBalance', {
+          address: this.sharedWallet.sharedWalletAddress,
         })
         .then(res => {
           if (!res) {
-            this.$message.error(this.$t("dashboard.getBalanceErr"));
+            this.$message.error(this.$t('dashboard.getBalanceErr'));
           }
           return res;
         });
     },
     getOep4Balances() {
       this.$store
-        .dispatch("fetchTokenBalances", {
-          address: this.sharedWallet.sharedWalletAddress
+        .dispatch('fetchTokenBalances', {
+          address: this.sharedWallet.sharedWalletAddress,
         })
         .then(res => {
           if (!res) {
-            this.$message.error(this.$t("dashboard.getBalanceErr"));
+            this.$message.error(this.$t('dashboard.getBalanceErr'));
           }
           return res;
         });
     },
     getExchangeCurrency() {
-      const currency = "ont";
-      const goaltype = "USD";
+      const currency = 'ont';
+      const goaltype = 'USD';
       const amount = this.balance.ont;
       const url = `https://service.onto.app/S3/api/v1/onto/exchangerate/reckon/${currency}/${goaltype}/${amount}`;
       axios.get(url).then(res => {
@@ -529,22 +551,22 @@ export default {
       const sharedAddress = this.sharedWallet.sharedWalletAddress;
       // const assetName = 'ONT'
       const timeStamp = new Date().getTime();
-      const net = localStorage.getItem("net");
+      const net = localStorage.getItem('net');
       const ontPassNode =
-        net === "TEST_NET" ? ONT_PASS_NODE : ONT_PASS_NODE_PRD;
+        net === 'TEST_NET' ? ONT_PASS_NODE : ONT_PASS_NODE_PRD;
       const url = ontPassNode + ONT_PASS_URL.QueryPendingTransfer;
       this.axios
         .get(url, {
           params: {
             sharedAddress,
             // assetName,
-            beforeTimeStamp: timeStamp
-          }
+            beforeTimeStamp: timeStamp,
+          },
         })
         .then(res => {
           console.log(res);
           this.pendingTx = res.data.SigningSharedTransfers.map(p => {
-            if (p.assetName.toLowerCase() === "ong") {
+            if (p.assetName.toLowerCase() === 'ong') {
               p.amount = new BigNumber(p.amount).div(1e9).toFixed(9);
             }
             return p;
@@ -552,15 +574,15 @@ export default {
         })
         .catch(err => {
           console.log(err);
-          this.$message.error(this.$t("common.networkErr"));
+          this.$message.error(this.$t('common.networkErr'));
         });
     },
     toCopayerDetail() {
-      this.$router.push({ path: "/sharedWallet/copayers" });
+      this.$router.push({ path: '/sharedWallet/copayers' });
     },
     refresh(showLoading) {
       if (showLoading) {
-        this.$store.dispatch("showLoadingModals");
+        this.$store.dispatch('showLoadingModals');
       }
       if (this.requestStart) {
         return;
@@ -570,27 +592,27 @@ export default {
         this.getTransactions(),
         this.getBalance(),
         this.getOep4Balances(),
-        this.getPendingTx()
-      ]).then(res => {
+        this.getPendingTx(),
+      ]).then(() => {
         this.requestStart = false;
-        this.$store.dispatch("hideLoadingModals");
+        this.$store.dispatch('hideLoadingModals');
       });
     },
     back() {
-      this.$router.push({ name: "Dashboard" });
+      this.$router.push({ name: 'Dashboard' });
     },
     showTransferBox() {
       if (Number(this.balance.ong) < 0.05) {
-        this.$message.warning(this.$t("common.ongNoEnough"));
+        this.$message.warning(this.$t('common.ongNoEnough'));
         return;
       }
-      this.$store.commit("CLEAR_CURRENT_TRANSFER");
+      this.$store.commit('CLEAR_CURRENT_TRANSFER');
 
-      this.$store.commit("UPDATE_TRANSFER_REDEEM_TYPE", { type: false });
-      this.$router.push({ path: "/sharedWallet/sendTransfer" });
+      this.$store.commit('UPDATE_TRANSFER_REDEEM_TYPE', { type: false });
+      this.$router.push({ path: '/sharedWallet/sendTransfer' });
     },
     showReceive() {
-      this.$router.push({ path: "/commonWalletReceive/sharedWallet" });
+      this.$router.push({ path: '/commonWalletReceive/sharedWallet' });
     },
     pendingTxDetail(tx) {
       //判断当前是否在上链中状态
@@ -602,22 +624,22 @@ export default {
         }
       }
       if (requiredNumber <= signed) {
-        this.$message.warning(this.$t("sharedWalletHome.txSendingTochain"));
+        this.$message.warning(this.$t('sharedWalletHome.txSendingTochain'));
         return;
       }
-      this.$store.commit("UPDATE_PENDINGTX", { pendingTx: tx });
-      if (tx.receiveaddress === tx.sendaddress && tx.assetName === "ONG") {
-        this.$store.commit("UPDATE_TRANSFER_REDEEM_TYPE", { type: true });
+      this.$store.commit('UPDATE_PENDINGTX', { pendingTx: tx });
+      if (tx.receiveaddress === tx.sendaddress && tx.assetName === 'ONG') {
+        this.$store.commit('UPDATE_TRANSFER_REDEEM_TYPE', { type: true });
       }
-      this.$router.push("/sharedWallet/pendingTxHome");
+      this.$router.push('/sharedWallet/pendingTxHome');
     },
     ifHasLocalCopayer() {
       var that = this;
       const coPayers = this.sharedWallet.coPayers;
       const localCopayers = [];
       dbService.find(
-        { $or: [{ type: "CommonWallet" }, { type: "HardwareWallet" }] },
-        function(err, accounts) {
+        { $or: [{ type: 'CommonWallet' }, { type: 'HardwareWallet' }] },
+        function (err, accounts) {
           if (err) {
             console.log(err);
             that.$message.error(err);
@@ -640,21 +662,21 @@ export default {
     },
     checkMoreTx() {
       let url = `https://explorer.ont.io/address/${this.sharedWallet.sharedWalletAddress}/10/1`;
-      if (this.network === "TestNet") {
-        url += "/testnet";
+      if (this.network === 'TestNet') {
+        url += '/testnet';
       }
       open(url);
     },
     showTxDetail(txHash) {
       let url = `https://explorer.ont.io/transaction/${txHash}`;
-      if (this.network === "TestNet") {
-        url += "/testnet";
+      if (this.network === 'TestNet') {
+        url += '/testnet';
       }
       open(url);
     },
     copy() {
       this.$copyText(this.sharedWallet.sharedWalletAddress);
-      this.$message.success(this.$t("common.copied"));
+      this.$message.success(this.$t('common.copied'));
     },
     redeemOng() {
       if (this.balance.unboundOng == 0) {
@@ -662,42 +684,42 @@ export default {
         return;
       }
       if (Number(this.balance.ong) < 0.05) {
-        this.$message.warning(this.$t("common.ongNoEnough"));
+        this.$message.warning(this.$t('common.ongNoEnough'));
         return;
       }
-      this.$store.commit("CLEAR_CURRENT_TRANSFER");
-      this.$store.commit("UPDATE_TRANSFER_REDEEM_TYPE", { type: true });
+      this.$store.commit('CLEAR_CURRENT_TRANSFER');
+      this.$store.commit('UPDATE_TRANSFER_REDEEM_TYPE', { type: true });
 
       const redeem = {
         claimableOng: this.balance.unboundOng,
-        balance: this.balance.ong
+        balance: this.balance.ong,
       };
-      this.$store.commit("UPDATE_CURRENT_REDEEM", { redeem: redeem });
-      this.$router.push({ path: "/sharedWallet/sendTransfer" });
+      this.$store.commit('UPDATE_CURRENT_REDEEM', { redeem: redeem });
+      this.$router.push({ path: '/sharedWallet/sendTransfer' });
     },
     handleModalOk() {
       this.redeemInfoVisible = false;
     },
     showPaxMgmt() {
-      this.$router.push({ path: "/sharedWallet/paxMgmt" });
+      this.$router.push({ path: '/sharedWallet/paxMgmt' });
     },
     showTxMgmt() {
-      this.$router.push({ path: "/sharedWallet/txMgmt" });
+      this.$router.push({ path: '/sharedWallet/txMgmt' });
     },
     checkMoreOep4() {
-      this.$router.push({ name: "Oep4Home" });
+      this.$router.push({ name: 'Oep4Home' });
     },
     addOep4() {
       this.showOep4Selection = true;
     },
     closeOep4Selection() {
       this.showOep4Selection = false;
-      this.$store.dispatch("showLoadingModals");
-      this.$store.dispatch("fetchTokenBalances", {
-        address: this.sharedWallet.sharedWalletAddress
+      this.$store.dispatch('showLoadingModals');
+      this.$store.dispatch('fetchTokenBalances', {
+        address: this.sharedWallet.sharedWalletAddress,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
