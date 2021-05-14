@@ -1,5 +1,20 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Darkmode from 'darkmode-js';
+
+const options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+// darkmode.showWidget();
 
 Vue.use(Router)
 
@@ -27,7 +42,10 @@ export default new Router({
     {
         path: '/setting',
         name: 'Setting',
-        component: require('@/components/Setting').default
+        component: require('@/components/Setting').default,
+        props: {
+            darkmode: darkmode
+        }
     },
     {
         path: '/dapps',

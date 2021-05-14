@@ -221,27 +221,6 @@ export default {
     width:80%;
 }
 
-.basic-pk-btns {
-    position: fixed;
-    bottom:0;
-    width:calc(100% - 4rem);
-    height:85px;
-    left:4rem;
-    background: #FFFFFF;
-    box-shadow: 0 -1px 6px 0 #F2F2F2;
-    z-index: 1000;
-}
-.basic-pk-btns button:first-child {
-    float:left;
-}
-.basic-pk-btns :nth-child(2) {
-    float:right;
-}
-.basic-pk-btns :nth-child(3) {
-    float:right;
-    margin-right:20px;
-}
-
 .error-input {
     border-color: red;
 }

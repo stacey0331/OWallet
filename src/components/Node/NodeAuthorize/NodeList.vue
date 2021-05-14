@@ -1,10 +1,8 @@
 <style scoped>
 .block-clock {
-    isolation: isolate;
     width: 540px;
     height: 80px;
     margin:15px auto;
-    border: 1px solid #dddddd;
     border-radius: 5px;
     background: var(--primary-surface);
     padding: 8px;
@@ -67,7 +65,7 @@
 }
 </style>
 <template>
-    <div>
+    <div class="content-container">
         <breadcrumb :current="$t('nodeMgmt.stakeAuthorization')" v-on:backEvent="handleRouteBack"></breadcrumb>
             <a-button type="primary" class="btn-next btn-history" @click="toStakeHistory">{{$t('nodeMgmt.stakeHistory')}}</a-button>
         <div class="block-clock">

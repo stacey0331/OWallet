@@ -6,7 +6,7 @@
 .label {
     font-family: AvenirNext-Bold;
     font-size: 14px;
-    color: #000000;
+    color: var(--black-or-white);
     margin-bottom:30px;
 }
 .qrcode {
@@ -21,7 +21,7 @@
     float: left;
     font-family: AvenirNext-Regular;
     font-size: 14px;
-    color: #000000;
+    color: var(--black-or-white);
 }
 
 .value-item {
@@ -37,7 +37,6 @@
 .font-regular {
     font-family: AvenirNext-Regular;
     font-size: 14px;
-    color: #000000;
 }
 .copy-icon {
     width:18px;

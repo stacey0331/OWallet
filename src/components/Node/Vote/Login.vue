@@ -16,18 +16,16 @@
                 </div>
 
                 <div v-if="voteWalletType === 'ledgerWallet'">
-
                     <div class="payer-ledger-status">
-                    <div class="font-bold" style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
-                    <span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
-                    <span class="font-medium">{{ledgerStatus}} </span>
+                        <div class="font-bold" style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
+                        <span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
+                        <span class="font-medium">{{ledgerStatus}} </span>
                     </div>
-                    
                 </div>
                 </a-radio-group>
                 <div class="import-tip">
                     <span>{{$t('vote.notSeeWallet')}} </span>
-                    <span @click="hereImport">{{$t('vote.importHere')}}</span>
+                    <span class="darkmode-ignore" @click="hereImport">{{$t('vote.importHere')}}</span>
                 </div>
                 <a-button type="primary" class="btn-next" @click="next">{{$t('nodeStake.next')}}</a-button>
             </div>
@@ -130,9 +128,6 @@ export default {
 .change-payer-radio {
     width:100%;
 }
-.payer-radio-item {
-    margin-bottom:20px;
-}
 .btn-container {
     text-align: center;
     margin: 5px auto;
@@ -146,17 +141,16 @@ export default {
     font-size:12px;
     font-family:AvenirNext-Regular,AvenirNext;
     font-weight:400;
-    
     margin-top: 4px;
     
     span:first-child {
-        color:rgba(0,0,0,1);
+        color: var(--black-or-white);
         opacity: 0.6;
     }
     span:last-child {
         opacity: 1 !important;
         font-weight:400;
-        color:rgba(25,107,216,1);
+        color: var(--primary-blue);
         text-decoration: underline;
         cursor: pointer;
     }

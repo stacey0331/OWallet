@@ -72,21 +72,6 @@
   top: -12px;
 }
 
-.copayer-header {
-  padding-bottom: 5px;
-  border-bottom: 1px solid #dfe2e9;
-}
-.copayer-header :last-child {
-  float: right;
-  font-family: AvenirNext-Bold;
-  font-size: 14px;
-  color: #6f7781;
-}
-.copayer-header :first-child {
-  font-family: AvenirNext-Bold;
-  font-size: 14px;
-  color: #000000;
-}
 .check-more {
   font-family: AvenirNext-Medium;
   font-size: 12px;
@@ -96,7 +81,7 @@
 }
 .txList-header {
   padding-bottom: 5px;
-  border-bottom: var(--white-bottom-border);
+  border-bottom: var(--light-border);
   position: relative;
   margin-bottom: 10px;
 }
@@ -198,6 +183,9 @@
     height: 34px;
     background:#F4F4F6;
     margin-right: 29px;
+}
+.darkmode--activated .vertical-line {
+  background: #2A2A2A;
 }
 .icon-arow {
     font-size: 10px;

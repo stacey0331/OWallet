@@ -13,7 +13,6 @@
   }
 
   .import-json-nav-pills > li.nav-item > a {
-    isolation: isolate;
     color: var(--black-or-white);
   }
 
@@ -124,7 +123,13 @@
   }
 
   .tip {
-    font-size:14px;
+    font-size: 14px;
+    margin-left: 5px;
+    color: var(--bright-text);
+  }
+
+  .darkmode--activated .redeem-info-icon {
+    filter: invert(180);
   }
 </style>
 <template>

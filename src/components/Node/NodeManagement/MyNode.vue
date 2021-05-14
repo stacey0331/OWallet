@@ -145,11 +145,10 @@ export default {
 	padding: 1.25rem;
 	position: relative;
 	width: 440px;
-	border: 1px solid white;
-
 	margin-right: 40px;
 	margin-bottom: 40px;
 	height: 250px;
+	
 	.info-item {
 		margin-bottom: 15px;
 		font-family: AvenirNext-Regular;
@@ -165,9 +164,6 @@ export default {
 		text-align: right;
 	}
 }
-.show-create-btn {
-	background-color: var(--primary-blue-light);
-}
 .node-item-create {
 	display: flex;
 	justify-content: center;
@@ -175,8 +171,13 @@ export default {
 }
 .btn-create {
   width: unset;
-  color: white;
-  border: white solid 1px;
   border-radius: 0;
+}
+
+.show-create-btn {
+	background-color: var(--primary-blue-light);
+}
+.darkmode--activated .show-create-btn {
+	background: var(--primary-surface);
 }
 </style>

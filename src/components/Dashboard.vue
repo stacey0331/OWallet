@@ -78,24 +78,6 @@
     top: -12px;
   }
 
-  .copayer-header {
-    padding-bottom: 5px;
-    border-bottom: 1px solid #DFE2E9;
-  }
-
-  .copayer-header :last-child {
-    float: right;
-    font-family: AvenirNext-Bold;
-    font-size: 14px;
-    color: #6F7781;
-  }
-
-  .copayer-header :first-child {
-    font-family: AvenirNext-Bold;
-    font-size: 14px;
-    color: #000000;
-  }
-
   .check-more {
     font-family: AvenirNext-Medium;
     font-size: 12px;
@@ -111,7 +93,7 @@
 
   .txList-header {
     padding-bottom: 5px;
-    border-bottom: var(--white-bottom-border);
+    border-bottom: var(--light-border);
     position: relative;
     margin-bottom:10px;
   }

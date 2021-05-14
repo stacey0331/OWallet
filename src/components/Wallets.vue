@@ -2,17 +2,17 @@
   <div class="negative-margin-top">
     <ul class="nav nav-pills wallets-nav-pills" id="pills-tab" role="tablist">
       <li class="nav-item" @click="setActiveTab(1)">
-        <a class="nav-link darkmode-ignore" id="pills-common-tab" data-toggle="pill" href="#pills-common" role="tab"
+        <a class="nav-link" id="pills-common-tab" data-toggle="pill" href="#pills-common" role="tab"
           :class="activeTab == 1? 'active show' : ''"
            aria-controls="pills-common" aria-selected="false">{{ $t('wallets.common') }}</a>
       </li>
       <li class="nav-item" @click="setActiveTab(2)">
-        <a class="nav-link darkmode-ignore" id="pills-shared-tab" data-toggle="pill" href="#pills-shared" role="tab"
+        <a class="nav-link" id="pills-shared-tab" data-toggle="pill" href="#pills-shared" role="tab"
           :class="activeTab == 2? 'active show' : ''"
            aria-controls="pills-shared" aria-selected="false">{{ $t('wallets.shared') }}</a>
       </li>
       <li class="nav-item" @click="setActiveTab(3)">
-        <a class="nav-link darkmode-ignore" id="pills-ledger-tab" data-toggle="pill" href="#pills-ledger" role="tab"
+        <a class="nav-link" id="pills-ledger-tab" data-toggle="pill" href="#pills-ledger" role="tab"
           :class="activeTab == 3? 'active show' : ''"
            aria-controls="pills-ledger" aria-selected="false">{{ $t('wallets.ledger') }}</a>
       </li>
@@ -205,8 +205,8 @@
     margin-bottom: 2.75rem;
   }
 
-  .div-create-wallet {
-    border:1px solid #dddddd;
+  .darkmode--activated .div-create-wallet {
+    border: 1px solid var(--primary-blue);
   }
 
   .normalWallet {
@@ -229,12 +229,17 @@
     background-color: var(--primary-blue-light);
   }
 
+  .darkmode--activated .div-create-wallet-bg-color {
+    background-color: var(--primary-surface);
+  }
+
   .img-wallet-create {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-left: -30px;
     margin-top: -30px;
+    opacity: 0.8;
   }
 
   .div-create-wallet > div > a {
@@ -244,13 +249,14 @@
   .btn-create {
     width: 8.25rem;
     height: 2.13rem;
-    color: white;
-    border: white solid 1px;
+    color: var(--white-or-black);
     border-radius: 0;
+    border: 1px solid white;
   }
 
   .darkmode--activated .btn-create {
-    mix-blend-mode: difference;
+    background-color: var(--primary-blue);
+    border: none;
   }
 
   .div-create {

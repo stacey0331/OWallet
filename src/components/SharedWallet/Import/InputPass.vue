@@ -37,7 +37,7 @@
 .label {
     font-family: 'PingFangSC-Semibold';
     font-size: 20px;
-    color: #5E6369;
+    color: var(--medium-text);
     margin-left: 172px;
 }
 .wallet-address {
@@ -56,7 +56,7 @@
 }
 
 .wallet-num-item :last-child {
- float: right;
+    float: right;
 }
 .confirm-pk-box {
     width:540px;
@@ -87,13 +87,14 @@
     color:#000000;
     vertical-align: middle;
     float: left;
+    user-select: none;
 }
 
 .copayer-name {
     margin-left: 20px;
     font-family: 'AvenirNext-Medium';
     font-size:14px;
-    color:#000000;
+    color: var(--black-or-white);
     float: left;
     display: block;
     width:150px;
@@ -103,7 +104,7 @@
 .copayer-address {
     font-family: 'AvenirNext-Medium';
     font-size:14px;
-    color:#5E6369;
+    color: var(--medium-text);
     float:right;
 }
 .input-container {
@@ -177,8 +178,6 @@
 
 <script>
 import {mapState} from 'vuex'
-import {Crypto} from 'ontology-ts-sdk'
-import {DEFAULT_SCRYPT} from '../../../core/consts'
 import dbService from '../../../core/dbService'
 import en from '../../../lang/en'
 import zh from '../../../lang/zh'
@@ -220,8 +219,6 @@ export default {
                 that.$store.commit('CLEAR_IMPORT_SHARED_STATE')
                 that.$router.push({name:'Wallets'})
             })
-
-
         }
     }
 }

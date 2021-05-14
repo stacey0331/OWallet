@@ -2,20 +2,16 @@
   <div class="container ledger-import-container">
     <div>
       <a-input class="input" :placeholder="$t('importLedgerWallet.label')" v-model="label"></a-input>
-
       <a-checkbox @change="onChangeNeo" :checked="neo" class="check-neo">{{$t('importLedgerWallet.neoCompatible')}}</a-checkbox>
-
     </div>
+    
     <div class="div-ledger-info">
       <div class="div-ledger-info-tit"><strong>{{$t('ledgerWallet.info')}}</strong></div>
-
       <div class="font-bold" style="margin-bottom: 15px;">{{$t('ledgerWallet.connectApp')}}</div>
-
       <div class="ledger-status">
           <span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
           <span class="font-medium">{{ledgerStatus}} </span>
       </div>
-
     </div>
 
     <div class="basic-pk-btns">
@@ -158,16 +154,17 @@
 <style scoped>
   .ledger-import-container {
     width: 36rem;
+    margin-top: 20px;
   }
 
   .div-ledger-info {
-    border: 1px solid #DFE2E9;
+    border: var(--light-border);
     margin-top: 15px;
     padding: 10px;
   }
 
   .div-ledger-info-tit {
-    border-bottom: 1px solid #DFE2E9;
+    color: var(--bright-text);
     padding-bottom: 10px;
     margin-bottom: 10px;
   }
@@ -202,7 +199,7 @@
   .check-neo {
     margin-top: 10px;
     font-family: 'AvenirNext-Medium';
-    color: #000000;
+    color: var(--bright-text);
     font-size: 13px;
   }
 </style>

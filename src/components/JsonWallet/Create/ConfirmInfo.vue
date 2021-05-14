@@ -10,7 +10,7 @@
       <p class="font-medium-black">
         <span></span>
          <a-icon type="warning" /> {{$t('createJsonWallet.backupWallet')}}</p>
-         <a-button type="primary" @click="downloadWallet">{{$t('createJsonWallet.download')}}</a-button>
+         <a-button type="primary" class="btn-download" @click="downloadWallet">{{$t('createJsonWallet.download')}}</a-button>
     </div>
     <div class="confirm-btns">
       <div class="confirm-btn-container">
@@ -113,13 +113,13 @@
   .json-confirm-container {
     width: 36rem;
     padding: 15px;
-    border:1px solid #dddddd;
+    border: var(--light-border);
+    color: var(--bright-text);
     p {
         margin-bottom: 10px;
         word-break: break-all;
     }
   }
-
 
   .confirm-btns {
     position: fixed;
@@ -127,8 +127,7 @@
     width: calc(100% - 4rem);
     height: 85px;
     left: 4rem;
-    background: #FFFFFF;
-    box-shadow: 0 -1px 6px 0 #F2F2F2;
+    box-shadow: 0 -1px 6px 0 var(--box-shadow);
     z-index: 1000;
   }
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="content-container">
     <breadcrumb :current="$t('createJsonWallet.create')" v-on:backEvent="back"></breadcrumb>
     <div class="shared-container">
       <a-steps :current="current" class="create-steps">

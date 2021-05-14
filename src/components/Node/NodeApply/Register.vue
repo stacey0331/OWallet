@@ -34,11 +34,12 @@
 										:placeholder="$t('nodeApply.selectOperationWallet')">
 									</a-select>
 								</a-tab-pane>
-								<a-tab-pane key="2" :tab="$t('nodeApply.enterOperationPk')" >
+								<a-tab-pane key="2" :tab="$t('nodeApply.enterOperationPk')">
 									<a-input v-model="operationPk"
-									class="input"
-									@blur="onSelectOperationWallet"
-									:placeholder="$t('nodeApply.enterOperationPk')"></a-input>
+										class="input"
+										@blur="onSelectOperationWallet"
+										:placeholder="$t('nodeApply.enterOperationPk')">
+									</a-input>
 								</a-tab-pane>
 							</a-tabs>
 						</div>
@@ -85,7 +86,6 @@
                                     class="btn-next"
                                     @click="confirm">{{$t('nodeApply.ok')}}</a-button>
                         </div>
-
 					</div>
 				</div>
 			</div>
@@ -268,12 +268,15 @@ export default {
 .register-form,
 .register-confirm {
 	margin-top: 40px;
-	.form-item {
+	.form-item  {
 		margin-bottom: 20px;
 		label {
 			font-family: AvenirNext-Medium;
-			color: #000000;
+			color: var(--black-or-white);
 		}
+	}
+	p {
+		color: var(--black-or-white);
 	}
 }
 .btn-container {
@@ -314,7 +317,6 @@ export default {
     }
 }
 .proxy-tip {
-	isolation: isolate;
 	text-align: left;
     font-size: 12px;
     font-family: AvenirNext-Regular,AvenirNext;

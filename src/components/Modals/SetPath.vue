@@ -77,7 +77,7 @@
     margin-top: 30px;
     font-family: AvenirNext-Bold;
     font-size: 14px;
-    color: #000000;
+    color: var(--black-or-white);
     text-align: center;
   }
 
@@ -89,6 +89,8 @@
     width: 25rem;
     height: 18rem;
     border-radius: 0;
+    background: var(--primary-surface);
+    color: var(--medium-text);
   }
 
   .modal-footer {
@@ -111,7 +113,7 @@
   }
 
   .btn-save-path {
-    color: #FFFFFF;
-    background: #196BD8;
+    color: var(--white-or-black);
+    background: var(--primary-blue);
   }
 </style>

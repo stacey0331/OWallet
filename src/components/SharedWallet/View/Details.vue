@@ -95,7 +95,7 @@ import dbService from '../../../core/dbService'
     margin-top: 1.75rem;
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: var(--bright-text);
+    color: var(--black-or-white);
     line-height: 24px;
     word-wrap: break-word;
     height:6rem;

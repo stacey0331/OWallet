@@ -28,7 +28,6 @@
                             <a-icon type="caret-down" class="icon-reject" /> <span>{{item.rejects}}</span>
                         </div>
                     </div>
-                    
                 </div>
                 <div class="actions">
                     <a-button type="link" @click="toDetail(item)">Detail</a-button>
@@ -55,7 +54,6 @@
                             <a-icon type="caret-down" class="icon-reject" /> <span>{{item.rejects}}</span>
                         </div>
                     </div>
-                    
                 </div>
                 <div class="actions">
                     <a-button type="link" @click="toDetail(item)">Detail</a-button>
@@ -233,14 +231,14 @@ export default {
     height:500px;
     text-align: center;
     line-height: 50px;
-    background: #F4F4F6;
+    background: var(--primary-surface);
     position: relative;
     p {
         margin: 200px auto;
         font-size:16px;
         font-family:AvenirNext-Regular,AvenirNext;
         font-weight:400;
-        color:rgba(0,0,0,1);
+        color: var(--black-or-white);
         opacity: 0.6;
         position: absolute;
         left:0;
@@ -255,7 +253,7 @@ export default {
         display: flex;
         flex-direction: row;
         padding: 16px 0;
-        border-bottom: 1px solid #F4F4F6;
+        border-bottom: var(--light-border);
         align-items: center;
 
         .title {
@@ -264,7 +262,7 @@ export default {
             font-size:14px;
             font-family:PingFangSC-Medium,PingFang SC;
             font-weight:500;
-            color:rgba(0,0,0,0.65);
+            color: var(--bright-text);
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
@@ -273,11 +271,11 @@ export default {
         .duration {
             margin-right:50px;
             p {
-                opacity: 0.4;
+                opacity: 1;
                 font-size:12px;
                 font-family:AvenirNext-Regular,AvenirNext;
                 font-weight:400;
-                color:rgba(0,0,0,1);
+                color:var(--black-or-white);
             }
             
             p:last-child {
@@ -290,7 +288,7 @@ export default {
             font-size:12px;
             font-family:AvenirNext-Regular,AvenirNext;
             font-weight:400;
-            color:rgba(0,0,0,1);
+            color: var(--black-or-white);
             .status-detail {
                 margin-top:4px;
                 display: flex;
@@ -304,6 +302,7 @@ export default {
                     flex-direction: row;
                     justify-content: flex-start;
                     align-items:center;
+                    color: var(--black-or-white);
                     span {
                         margin-left:4px;
                         font-size: 14px;

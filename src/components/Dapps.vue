@@ -12,7 +12,6 @@
     color: #515457;
     line-height: 24px;
     height:15rem;
-    border: 1px solid #f5f7fb;
 }
 .dapp-item:hover {
     border:1px solid var(--primary-blue);
@@ -25,6 +24,9 @@
     justify-content: flex-start;
     align-items: center;
     color: var(--bright-text);
+}
+.darkmode--activated .dapp-title {
+    border-bottom-color: #333333;
 }
 .dapp-title > img {
     width: 30px;

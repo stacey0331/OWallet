@@ -12,9 +12,9 @@
     <div class="import-container">
         <a-steps :current="current" class="import-steps">
             <a-step />
-            <a-step  />
+            <a-step />
         </a-steps>
-        <query-shared-wallet v-if="current ===0"></query-shared-wallet>
+        <query-shared-wallet v-if="current === 0"></query-shared-wallet>
         <input-pass v-if="current === 1"></input-pass>
     </div>
 </div>

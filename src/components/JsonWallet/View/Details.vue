@@ -49,7 +49,7 @@
                 {{option === 'EXPORT_WIF' ? $t('wallets.exportingWIF') : ''}}
                  {{wallet.address}}</p>
               <div v-if="isCommonWallet">
-                <p>{{$t('common.enterWalletPassword')}}</p>
+                <p style="color: var(--medium-text);">{{$t('common.enterWalletPassword')}}</p>
                 <a-input class="input" v-model="password" :plaecholder="$t('common.password')" type="password"></a-input>
               </div>
           </div>
@@ -300,7 +300,7 @@
     margin-top: 1.75rem;
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: var(--bright-text);
+    color: var(--black-or-white);
     line-height: 24px;
     word-wrap: break-word;
     height:6rem;

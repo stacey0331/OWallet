@@ -9,7 +9,6 @@
 					{{vote.title}}
 				</div>
 				<div class="voted-container">
-
 					<div class="visiter-approve"
 						v-if="!isVoter">
 						<a-icon type="caret-up"
@@ -325,7 +324,7 @@ export default {
 	font-size: 14px;
 	font-family: AvenirNext-Regular, AvenirNext;
 	font-weight: 400;
-	color: rgba(0, 0, 0, 1);
+	color: var(--black-or-white);
 }
 
 .detail-container {
@@ -340,7 +339,7 @@ export default {
 			font-size: 18px;
 			font-family: AvenirNext-DemiBold, AvenirNext;
 			font-weight: 600;
-			color: rgba(0, 0, 0, 1);
+			color: var(--black-or-white);
 			margin-bottom: 24px;
 		}
 	}
@@ -359,7 +358,7 @@ export default {
 .short-line {
 	width: 1px;
 	height: 22px;
-	background: rgba(244, 244, 246, 1);
+	background: var(--box-shadow);
 }
 .voted-container {
 	display: flex;
@@ -432,11 +431,8 @@ export default {
 		font-size: 18px;
 		font-family: AvenirNext-Regular, AvenirNext;
 		font-weight: 400;
-		color: rgba(0, 0, 0, 1);
-		opacity: 0.4;
-	}
-	.text-smal {
-		opacity: 0.4;
+		color: var(--black-or-white);
+		margin: 0 5px;
 	}
 	.vote-option {
 		font-size: 14px;
@@ -470,8 +466,7 @@ export default {
 	font-size: 16px;
 	font-family: AvenirNext-Regular, AvenirNext;
 	font-weight: 400;
-	color: rgba(0, 0, 0, 1);
-	opacity: 0.6;
+	color: var(--bright-text);
 }
 .info-container {
 	margin-bottom: 22px;
@@ -479,13 +474,13 @@ export default {
 		font-size: 16px;
 		font-family: AvenirNext-Bold, AvenirNext;
 		font-weight: bold;
-		color: rgba(0, 0, 0, 1);
-		opacity: 0.6;
-		border-bottom: 1px solid #f4f4f6;
+		color: var(--bright-text);
+		opacity: 0.9;
+		border-bottom: var(--light-border);
 	}
 	.info-item {
 		padding: 10px 0;
-		border-bottom: 1px solid #f4f4f6;
+		border-bottom: var(--light-border);
 		display: flex;
 		flex-direction: row;
 		text-align: left;
@@ -496,14 +491,14 @@ export default {
 			font-size: 12px;
 			font-family: AvenirNext-Medium, AvenirNext;
 			font-weight: 500;
-			color: rgba(81, 84, 87, 1);
+			color: var(--medium-text);
 		}
 		span:last-child {
 			flex: 1;
 			font-size: 14px;
 			font-family: AvenirNext-Regular, AvenirNext;
 			font-weight: 400;
-			color: rgba(0, 0, 0, 1);
+			color: var(--bright-text);
 		}
 	}
 }

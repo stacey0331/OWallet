@@ -15,7 +15,6 @@
   import zh from '../../lang/zh'
   import BasicInfo from './Import/BasicInfo'
   import Breadcrumb from '../Breadcrumb'
-  import {mapState} from 'vuex';
 
   export default {
     name: 'ImportLedgerWallet',

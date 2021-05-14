@@ -6,7 +6,7 @@
       <form>
         <div class="form-group">
           <label for="network-selection">{{ $t('setting.net') }}</label>
-          <select name="network-selection" id="network-selection" class="form-control" v-model="net"
+          <select name="network-selection" id="network-selection" class="form-control input" v-model="net"
                   @change="changeNet">
             <option value="TEST_NET">{{ $t('setting.testNet') }}</option>
             <option value="MAIN_NET">{{ $t('setting.mainNet') }}</option>
@@ -15,7 +15,7 @@
 
         <div class="form-group">
           <label for="network-selection">{{ $t('setting.nodeAddress') }}</label>
-          <select name="network-selection" id="network-selection" class="form-control" v-model="nodeAddress"
+          <select name="network-selection" id="network-selection" class="form-control input" v-model="nodeAddress"
                   @change="changeNode">
             <option v-for="item of nodeList" :key="item"  :value="item" >{{item}}</option>
           </select>
@@ -23,7 +23,7 @@
 
         <div class="form-group form-group-top">
           <label for="lang-selection">{{ $t('setting.lang') }}</label>
-          <select name="lang-selection" id="lang-selection" class="form-control" v-model="lang"
+          <select name="lang-selection" id="lang-selection" class="form-control input" v-model="lang"
                   @change="changeLanguage">
             <option value="en">{{ $t('setting.en') }}</option>
             <option value="zh">{{ $t('setting.zh') }}</option>
@@ -32,7 +32,7 @@
 
         <div class="form-group form-group-top">
           <label for="theme-selection">{{ $t('setting.theme') }}</label>
-          <select name="theme-selection" id="theme-selection" class="form-control" v-model="theme"
+          <select name="theme-selection" id="theme-selection" class="form-control input" v-model="theme"
                   @change="changeTheme">
             <option value="day">{{ $t('setting.day') }}</option>
             <option value="night">{{ $t('setting.night') }}</option>
@@ -42,7 +42,7 @@
         <div class="form-group form-group-top">
           <label>{{ $t('setting.path') }}</label>
           <p>
-            <span class="span-path-title">{{ $t('setting.pathTit') }}</span>{{savePath}}
+            <span class="span-path-title">{{ $t('setting.pathTit') }}{{savePath}}</span>
           </p>
           <div>
             <a-button type="primary" class="btn-next" @click="setSavePath">{{ $t('setting.change') }}</a-button>
@@ -70,9 +70,10 @@
         nodeList: localStorage.getItem('net') === 'TEST_NET' ? TEST_NET_LIST : MAIN_NET_LIST,
         lang: this.$i18n.locale,
         savePath: localStorage.getItem('savePath'),
-        theme: null,
+        theme: this.darkmode.isActivated() ? 'night' : 'day',
       }
     },
+    props: ['darkmode'],
     methods: {
       handleBack() {
         this.$router.push({name: 'Wallets'})
@@ -105,7 +106,7 @@
         LangStorage.setLang(this.$i18n.locale)
       },
       changeTheme() {
-
+        this.darkmode.toggle();
       },
       setSavePath() {
         dialog.showOpenDialog({properties: ['openDirectory','createDirectory']}).then(({filePaths}) => {
@@ -143,7 +144,7 @@
   }
 
   .form-container label {
-    color: #000000;
+    color: var(--black-or-white);
     font-size: 16px;
     font-family: AvenirNext-Bold;
   }
@@ -157,7 +158,7 @@
   }
 
   .span-path-title {
-    color: #000000;
+    color: var(--black-or-white);
     font-size: 16px;
     font-family: AvenirNext;
   }

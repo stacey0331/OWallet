@@ -15,21 +15,6 @@
   import 'bootstrap/dist/js/bootstrap.min.js'
   import TopLeftNav from "./components/TopLeftNav"
   import LoadingModal from './components/Modals/Loading'
-  import Darkmode from 'darkmode-js';
-
-  const options = {
-    bottom: '64px', // default: '32px'
-    right: '32px', // default: '32px'
-    time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-    backgroundColor: '#fff',  // default: '#fff'
-    saveInCookies: true, // default: true,
-    label: '🌓', // default: ''
-    autoMatchOsTheme: true // default: true
-  }
-
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
 
   export default {
     name: 'ont-wallet-test',
@@ -53,6 +38,7 @@
 
 
 <style lang="scss">
+  @import 'ant-overwrite';
   /* CSS */
   :root {
     --black-or-white: black;
@@ -64,20 +50,18 @@
     --primary-surface-warm: #F4F4F6;
     --bright-text: #43474b;
     --medium-text: #6e747a;
-    --white-bottom-border: 1px solid #F4F4F6;
+    --light-border: 1px solid #f0f0f5;
     --box-shadow: #F2F2F2;
   }
   .darkmode--activated {
-    --black-or-white: rgb(219, 219, 219);
+    --black-or-white: white;
     --white-or-black: black;
-    --primary-blue: #3EE3FF;
-    --primary-blue-light: #B2F4FF;
     --primary-background: black;
     --primary-surface: #1E1E1E;
     --primary-surface-warm: #2c2a2a;
     --bright-text: #cecece;
     --medium-text: #9c9c9c;
-    --white-bottom-border: 1px solid rgba(136, 136, 136, 0.534);
+    --light-border: 1px solid #2A2A2A;
     --box-shadow: #525252;
   }
 
@@ -100,7 +84,6 @@
   }
   
   @mixin dark-form-fields {
-    isolation: isolate;
     border: none !important;
     background: rgb(70, 70, 70) !important;
     color: white;
@@ -116,6 +99,25 @@
     }
   }
 
+  .home-container,
+  .content-container,
+  .setting-container,
+  .json-import-container,
+  .detail-container,
+  .auth-login,
+  .list-container,
+  .input-container,
+  .ledger-import-container,
+  .nav-item {
+    isolation: isolate;
+  }
+
+  .app-container {
+    isolation: isolate;
+    width: 550px;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 
   .loading {
     text-align: center;
@@ -140,14 +142,12 @@
   }
 
   .font-medium {
-    isolation: isolate !important;
     font-family: AvenirNext-Medium;
     color: var(--bright-text) !important;
     font-size: 0.88rem;
   }
 
   .font-medium-black {
-    isolation: isolate !important;
     font-family: AvenirNext-Medium;
     color: var(--black-or-white);
     font-size: 0.88rem;
@@ -155,7 +155,7 @@
 
   .font-bold {
     font-family: AvenirNext-Bold;
-    color: #5E6369;
+    color: var(--medium-text);
     font-size: 14px;
   }
 
@@ -163,7 +163,7 @@
     font-size:18px;
     font-family: AvenirNext-Regular,AvenirNext;
     font-weight:400;
-    color:rgba(0,0,0,1);
+    color: var(--black-or-white) !important;
   }
 
 
@@ -194,7 +194,6 @@
 
   .btn-next {
     background: var(--primary-blue) !important;
-    color: var(--white-or-black) !important;
     border-radius: 0 !important;
     border: none !important;
 
@@ -271,10 +270,6 @@
     text-shadow: none !important;
   }
 
-  /* .ant-spin-dot i {
-    background-color: white !important;
-  } */
-
   .v-validate-span-errors {
     color: red;
     font-size: 12px;
@@ -348,7 +343,7 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 5px;
-    border-bottom: var(--white-bottom-border);
+    border-bottom: var(--light-border);
   }
 
   .wallet-balance :first-child {
@@ -365,7 +360,7 @@
     /* padding-right:20px; */
     width:100%;
     height:40px;
-    border-bottom: var(--white-bottom-border);
+    border-bottom: var(--light-border);
   }
 
   .asset-ong {
@@ -375,19 +370,19 @@
   }
 
   .asset-label {
-    isolation: isolate;
     font-family: AvenirNext-Medium;
     font-size: 0.88rem;
-    color: var(--bright-text);
+    color: var(--black-or-white);
+    opacity: 0.8;
     float: left;
     margin-right: 12px;
   }
 
   .asset-amount {
-    isolation: isolate;
     font-family: AvenirNext-Medium;
     font-size: 18px;
-    color: var(--bright-text);
+    color: var(--black-or-white);
+    opacity: 0.8;
   }
 
   .asset-value {
@@ -410,15 +405,6 @@
     width: 120px;
     height: 34px;
   }
-  .asset-btn {
-    color: var(--primary-background);
-    &:hover {
-      background-color: var(--primary-blue-light) !important;
-    }
-    &:focus {
-      background-color: var(--primary-blue-light) !important;
-    }
-  }
   .text-btn-hover {
     &:hover {
       color: var(--primary-blue-light) !important;
@@ -433,7 +419,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom:10px;
-    border-bottom: var(--white-bottom-border);
+    border-bottom: var(--light-border);
     margin-bottom:20px;
   }
 
@@ -445,7 +431,8 @@
   .claim-ong-item :first-child {
     font-family: AvenirNext-Medium;
     font-size: 12px;
-    color: var(--bright-text);
+    color: var(--black-or-white);
+    opacity: 0.3;
     margin-right: 8px;
     width: 100px;
     display: block;
@@ -456,6 +443,7 @@
     font-family: AvenirNext-Medium;
     font-size: 12px;
     color: var(--black-or-white);
+    opacity: 0.3;
     float: left;
   }
   .redeem-container {
@@ -491,7 +479,7 @@
   }
 
   .tx-item:hover span {
-    color:#196BD8 !important;
+    color: var(--primary-blue) !important;
   }
 
   .tx-item :first-child {
@@ -516,24 +504,6 @@
     margin-top: -4rem;
   }
 
-  .ant-tabs-tab {
-    background: transparent !important;
-    color: var(--bright-text);
-
-    &:hover {
-      color: var(--primary-blue) !important;
-    }
-  }
-  .ant-tabs-tab-active {
-      color: var(--primary-blue) !important;
-  }
-
-  .app-container {
-    width: 550px;
-    margin: 0 auto;
-    margin-top: 20px;
-  }
-
   .switch-btn {
     background: transparent;
     color: var(--bright-text);
@@ -541,31 +511,6 @@
     &:hover {
       color: var(--primary-blue);
       border-color: var(--primary-blue);
-    }
-  }
-
-  .darkmode--activated .ant-select-selection {
-    @include dark-form-fields;
-    .ant-select-arrow {
-      color: var(--bright-text);
-    }
-  }
-
-  .ant-radio-button-wrapper-checked {
-    color: var(--primary-blue) !important;
-    border-color: var(--primary-blue) !important;
-    background: transparent !important;
-    &:hover {
-      color: var(--primary-blue-light);
-    }
-    box-shadow: none;
-  }
-
-  // The vertical bar between the two buttons
-  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-    box-shadow: -1px 0 0 0 var(--primary-blue);
-    &:hover {
-      box-shadow: -1px 0 0 0 var(--primary-blue-light);
     }
   }
 
@@ -583,7 +528,6 @@
   }
 
   .fields-label {
-    isolation: isolate;
     color: var(--bright-text) !important;
   }
 
@@ -592,7 +536,6 @@
   }
 
   thead tr th {
-    isolation: isolate;
     background: var(--primary-surface) !important;
 
     div {
@@ -600,35 +543,20 @@
     }
   }
 
-  .ant-pagination-item,
-  .ant-pagination-prev a,
-  .ant-pagination-next a {
-    background: var(--primary-surface) !important;
+  .payer-radio-item {
+    margin-bottom: 20px;
     color: var(--bright-text);
-
-    &:hover {
-      border-color: var(--primary-blue);
-    }
+  }
+  
+  .selection-item > p {
+    color: var(--black-or-white) !important;
   }
 
-  .ant-pagination-item-active {
-    a {
-      color: var(--primary-blue) !important;
-    }
-    border-color: var(--primary-blue) !important;
 
-    &:hover {
-      color: var(--primary-blue) !important;
-      border-color: var(--primary-blue) !important;
-    }
-  }
-
-  .ant-pagination-disabled {
-    color: var(--medium-text);
-    opacity: 0.8;
-
-    i {
-      color: var(--medium-text);
+  .darkmode--activated .ant-select-selection {
+    @include dark-form-fields;
+    .ant-select-arrow {
+      color: var(--bright-text);
     }
   }
 </style>

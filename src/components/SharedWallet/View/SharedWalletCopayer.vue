@@ -33,7 +33,6 @@
     margin-left:30px;
 }
 .label {
-    isolation: isolate;
     font-family: 'PingFangSC-Semibold';
     font-size: 20px;
     color: var(--medium-text);
@@ -111,7 +110,7 @@
 <template>
     <div>
         <breadcrumb :current="$t('sharedWalletHome.copayers')" :routes="routes" v-on:backEvent="backToWallets"></breadcrumb>
-        <div class="">
+        <div class="content-container">
             <div class="wallet-info" v-if="sharedWallet">
                 <div class="label">{{sharedWallet.sharedWalletName}}</div>
                 <div class="label wallet-address">

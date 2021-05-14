@@ -9,7 +9,7 @@
         @ok="handleWalletSignOK"
         @cancel="handleWalletSignCancel">
           <div v-if="wallet.key">
-              <p>{{$t('nodeStake.enterWalletPass')}}</p>
+              <p class="fields-label">{{$t('nodeStake.enterWalletPass')}}</p>
               <a-input class="input" v-model="walletPassword" :plaecholder="$t('nodeStake.password')" type="password"></a-input>
           </div>
           <div v-if="!wallet.key">

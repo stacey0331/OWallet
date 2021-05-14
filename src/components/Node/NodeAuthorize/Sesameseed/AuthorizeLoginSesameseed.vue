@@ -39,13 +39,11 @@
                 </div>
 
                 <div v-if="payerWalletType === 'ledgerWallet'">
-
                     <div class="payer-ledger-status">
                     <div class="font-bold" style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
                     <span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
-                    <span class="font-medium">{{ledgerStatus}} </span>
+                    <span class="font-medium" style="margin-left: 5px;">{{ledgerStatus}} </span>
                     </div>
-                    
                 </div>
                 </a-radio-group>
             </div>

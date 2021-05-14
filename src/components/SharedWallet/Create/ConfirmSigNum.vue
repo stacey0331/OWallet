@@ -112,7 +112,7 @@
 
   .wallet-label {
     font-family: 'AvenirNext-Bold';
-    color: #5E6369;
+    color: var(--medium-text);
     font-size: 14px;
   }
 
@@ -154,7 +154,7 @@
     margin-left: 20px;
     font-family: 'AvenirNext-Medium';
     font-size: 14px;
-    color: #000000;
+    color: var(--black-or-white);
     float: left;
     display: block;
     width: 150px;
@@ -165,11 +165,12 @@
   .copayer-address {
     font-family: 'AvenirNext-Medium';
     font-size: 14px;
-    color: #5E6369;
+    color: var(--medium-text);
     float: right;
   }
   .copayer-publicKey {
     float: right;
+    color: var(--bright-text);
   }
 
   .confirm-btns {
@@ -178,8 +179,8 @@
     width: calc(100% - 4rem);
     height: 85px;
     left: 4rem;
-    background: #FFFFFF;
-    box-shadow: 0 -1px 6px 0 #F2F2F2;
+    background: transparent;
+    box-shadow: 0 -1px 6px 0 var(--box-shadow);
     z-index: 1000;
   }
 

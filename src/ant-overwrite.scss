@@ -1,0 +1,63 @@
+.ant-modal-content,
+.ant-modal-header {
+  background-color: var(--primary-surface);
+
+  .ant-modal-confirm-body > * {
+    color: var(--black-or-white);
+  }
+}
+
+.ant-modal-title,
+.ant-modal-close {
+  color: var(--black-or-white);
+}
+
+.ant-pagination-item,
+.ant-pagination-prev a,
+.ant-pagination-next a {
+  background: var(--primary-surface) !important;
+  color: var(--bright-text);
+}
+
+.ant-pagination-disabled {
+  color: var(--medium-text);
+  opacity: 0.8;
+
+  i {
+    color: var(--medium-text);
+  }
+}
+
+.ant-radio-button-wrapper-checked {
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.ant-tabs-tab {
+  background: transparent !important;
+  color: var(--bright-text);
+}
+
+.ant-spin-text {
+  color: white !important;
+  text-shadow: none !important;
+}
+
+.ant-radio-inner {
+  background-color: var(--primary-background);
+  border-color: var(--medium-text);
+}
+
+.ant-modal-header,
+.ant-modal-footer {
+  border: var(--light-border);
+}
+
+.ant-table-tbody > tr > td,
+.ant-table-thead > tr > th {
+  border-bottom: var(--light-border);
+}
+
+.ant-table-small {
+  border: var(--light-border);
+}

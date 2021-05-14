@@ -45,11 +45,10 @@
                 </div>
 
                 <div v-if="payerWalletType === 'ledgerWallet'">
-
                     <div class="payer-ledger-status">
-                    <div class="font-bold" style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
-                    <span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
-                    <span class="font-medium">{{ledgerStatus}} </span>
+                        <div class="font-bold" style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
+                        <span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
+                        <span class="font-medium">{{ledgerStatus}} </span>
                     </div>
                     
                 </div>
@@ -64,10 +63,9 @@
         :dataSource="stakeHistory"
         :loading="requesting"
         >
-        <div slot="action" slot-scope="text, record" class="detail-link">
-            <a-icon type="arrow-right" @click="handleAuthorizeLogin(record)"/>
-        </div>
-
+            <div slot="action" slot-scope="text, record" class="detail-link">
+                <a-icon type="arrow-right" @click="handleAuthorizeLogin(record)"/>
+            </div>
         </a-table>
     </div>
 </template>

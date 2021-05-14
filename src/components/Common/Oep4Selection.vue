@@ -12,14 +12,13 @@
     display: flex;
     justify-content: space-between;
     padding: 7px 0;
-    border-bottom:1px solid #DFE2E9;
+    border-bottom: var(--light-border);
 }
 .selection-item p {
     margin: 0;
-    font-size:14px;
-    font-family:PingFangSC-Regular;
-    font-weight:400;
-    color:rgba(0,0,0,1);
+    font-size: 14px;
+    font-family: PingFangSC-Regular;
+    font-weight: 400;
 }
 .oep4-info {
     font-size: 12px;

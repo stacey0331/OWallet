@@ -19,9 +19,11 @@
 			<div v-if="walletType === 'ledgerWallet'">
 				<div class="payer-ledger-status">
 					<div class="font-medium"
-						style="margin-bottom: 10px;">{{$t('ledgerWallet.connectApp')}}</div>
-					<span class="font-medium-black darkmode-ignore">{{$t('ledgerWallet.status')}}: </span>
-					<span class="font-medium darkmode-ignore">{{ledgerStatus}}</span>
+						style="margin-bottom: 10px;">
+						{{$t('ledgerWallet.connectApp')}}
+					</div>
+					<span class="font-medium-black">{{$t('ledgerWallet.status')}}: </span>
+					<span class="font-medium" style="margin-left: 5px;">{{ledgerStatus}}</span>
 				</div>
 			</div>
 		</a-radio-group>
