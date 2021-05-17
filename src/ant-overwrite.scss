@@ -61,3 +61,16 @@
 .ant-table-small {
   border: var(--light-border);
 }
+
+.darkmode--activated .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.darkmode--activated .ant-dropdown-menu-item:hover, .ant-dropdown-menu-submenu-title:hover {
+  background-color: rgba(25, 107, 216, 0.2);
+}
+
+.darkmode--activated .ant-steps-item-process > .ant-steps-item-container > .ant-steps-item-content > .ant-steps-item-title::after {
+  background-color: #2A2A2A;
+}
+
